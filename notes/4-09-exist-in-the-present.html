@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exist in the Present</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.9', uses:['A21','D37','D24'], new:['D38','A22','T41'],
+moves:[
+ {who:'Y', tag:'objection', say:'If worth = being of use, then newborns, invalids, my bedridden grandfather with dementia have NO worth. Monstrous!',
+  f:'¬useful ⇒ ¬worth ?',
+  pic:G({g:[0,0,'Grandfather:\ncan’t do anything','x',170], w:[1.4,0,'No worth?','bad']}, [['g','w','?']])},
+ {who:'P', tag:'definition', say:'You’re looking at the level of ACTS — what someone did. Look at the level of BEING — that they exist at all.',
+  f:'D38',
+  pic:tb(['Level', 'Asks', 'Grandfather has worth?'], [['Acts','“What did they do?”','✗'],['Being','“Are they here?”','✓']])},
+ {who:'P', tag:'example', say:'Your mother is in a car crash, life in danger. You don’t ask what she did. You’re just glad she’s alive.',
+  f:'existence alone supports others  (A22)',
+  pic:G({m:[0,0,'Mother:\nalive','me'], f:[1.4,0,'Family supported,\nglad','act']}, [['m','f','just by being']])},
+ {who:'P', tag:'same for you', say:'If your life hung by a thread, people would be thankful just that you exist. So first accept yourself on the level of being.',
+  pic:G({y:[0,0,'You exist','me'], v:[1.3,0,'Worth','act']}, [['y','v','enough']])},
+ {who:'P', tag:'everyday', say:'Parents picture an ideal child (100 points) and subtract. Instead: start from zero and be glad the child is there.',
+  pic:G({l1:[-0.7,0,'Judging','lbl'], a:[0,0,'Ideal = 100','x'], b:[1.2,0,'Real child =\n100 − flaws','bad'],
+         l2:[-0.7,1,'Being','lbl'], c:[0,1,'Start at 0','me'], d:[1.2,1,'Child here =\n+ gratitude','act']}, [['a','b','subtract'],['c','d','add']])},
+ {who:'P', tag:'example', say:'A shut-in child washes the dishes. “Enough, go to school!” discourages. A plain “thank you” might help him take a step.',
+  pic:G({d:[0,0.5,'Child washes\ndishes','me'], a:[1.4,0,'“Just go to\nschool!”','bad'], b:[1.4,1,'“Thank you”','act']}, [['d','a','→ discouraged'],['d','b','→ feels worth']])},
+ {who:'Y', tag:'objection', say:'Hypocrisy! Who could actually live like that?',
+  pic:G({h:[0,0,'“Hypocrisy!”','bad']})},
+ {who:'P', tag:'Adler', say:'“Someone has to start. Others might not cooperate — that’s not connected to you. You should start.”',
+  pic:G({y:[0,0,'You start','act'], o:[1.3,0,'Others cooperate?','x']}, [['y','o','their task','-']])},
+],
+proofs:{T41:[
+ ['Worth is felt when a person is of use to others.','A21'],
+ ['On the level of being, existing at all is of use: others are supported just by your being alive.','A22'],
+ ['Every person exists.','fact'],
+ ['∴ Every person has worth on the level of being, whatever they can or cannot do.','1–3'],
+]},
+notes:{T41:'The Youth’s objection is valid only on the level of acts. A22 is what blocks it — accept or reject A22 and you know what follows.'},
+essence:[
+  ['Y','Then the bedridden and newborns have no worth!'],
+  ['P','That’s the level of acts. On the level of being (D38), existing is itself of use (A22).'],
+  ['P','Your mother in danger: you’re just glad she’s alive. Start from zero, not from an ideal minus points.'],
+  ['Y','Hypocrisy — who can live like that?'],
+  ['T','T41: everyone has worth by being. Adler: “Someone has to start — you start.”']],
+take:'Judge by acts and some people look worthless. Look at being, and everyone — including you — has worth just by existing.'});
+</script>

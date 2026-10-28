@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overcoming the Tasks That Face You</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.10', uses:['A10','D22','D12','A9'], new:['D24','T21'],
+moves:[
+ {who:'Y', tag:'question', say:'Fine, life isn’t a competition. But why does Adler say ALL problems are about relationships?',
+  pic:G({q:[0,0,'Why “all”?','goal']})},
+ {who:'P', tag:'answer', say:'You see people as enemies because you lost courage and are running away from your “life tasks”.',
+  pic:G({c:[0,0,'Lost courage','bad'], r:[1,0,'Run from\nlife tasks','bad'], e:[2,0,'See people\nas enemies','bad']}, [['c','r'],['r','e']])},
+ {who:'P', tag:'objectives', say:'Adler sets two objectives for behavior, and two for the mind that supports them.',
+  pic:tb(['Behavior', 'Mind (supports it)'], [['1. Be self-reliant','3. “I have the ability”'],['2. Live in harmony with society','4. “People are my comrades”']])},
+ {who:'P', tag:'origin', say:'As a child you’re protected. Growing up, you must become self-reliant: work, make friends, maybe love, marry, raise children.',
+  pic:G({c:[0,0,'Child:\nprotected','x'], w:[1,0,'Work','me'], f:[2,0,'Friends','me'], l:[3,0,'Love, family','goal']}, [['c','w'],['w','f'],['f','l']])},
+ {who:'Y', tag:'question', say:'Are these social duties, like paying taxes?  P: No — think only of relationships: their distance and depth. Adler also called them the “three social ties”.',
+  pic:tb(['Life tasks are…', ''], [['duties like taxes','✗'],['relationships you must face','✓']])},
+ {who:'P', tag:'definition', say:'Life tasks: the three relationships a person must face — work, friendship, love. Measured by distance and depth.',
+  f:'D24: work < friendship < love   (by closeness)',
+  pic:G({w:[0,0,'Work\nfar, shallow','x'], f:[1,0,'Friendship','me'], l:[2,0,'Love\nclose, deep','goal']}, [['w','f','closer'],['f','l','closer']])},
+ {who:'P', tag:'work', say:'No work is done alone: even my writing needs editors, designers, printers, booksellers.',
+  pic:G({a:[0,0.5,'Author','me'], e:[1.2,0,'Editor','x'], p:[1.2,1,'Printer','x'], b:[2.4,0.5,'Bookstore','x']}, [['a','e'],['a','p'],['e','b'],['p','b']])},
+ {who:'P', tag:'work', say:'Work is the easiest task: a shared goal (good results) forces cooperation, and it ends when work ends.',
+  pic:tb(['Task', 'Shared goal?', 'Ends?', 'Difficulty'], [['Work','✓ results','✓ after hours','lowest'],['Friendship','✗','✗','higher'],['Love','✗','✗','highest']])},
+ {who:'P', tag:'proves', say:'Those who avoid work aren’t avoiding the work. They’re avoiding rejection, blame, being called incompetent — the relationships.',
+  f:'T21',
+  pic:G({r:[0,0,'Rejected by\ncompanies','x'], m:[0,1,'Big mistake\nat work','x'], h:[1.4,0.5,'Pain = being\njudged by others','bad',170]}, [['r','h'],['m','h']])},
+],
+proofs:{T21:[
+ ['Every problem involves other people.','A10'],
+ ['The pains people name in work — rejection letters, blame for a mistake, being called incompetent — are all judgments by others.','observation'],
+ ['The work itself (tasks, effort) is not what they name.','observation'],
+ ['∴ What people avoid in work is being judged by others, not the work.','1–3'],
+]},
+essence:[
+  ['Y','Why does Adler say ALL problems are relationship problems?'],
+  ['P','You see people as enemies because you lost courage and run from your life tasks.'],
+  ['P','Objectives: self-reliance + harmony; mind: “I have ability” + “people are comrades”.'],
+  ['P','Life tasks (D24): work < friendship < love, by distance and depth. Work is easiest: shared goal, ends after hours.'],
+  ['T','T21: people who avoid work avoid being judged by others, not the work.']],
+take:'Three life tasks: work, friendship, love. Each is a relationship. Running from them is running from people.'});
+</script>

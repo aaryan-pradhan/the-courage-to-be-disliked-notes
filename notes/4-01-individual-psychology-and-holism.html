@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Individual Psychology and Holism</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.1', uses:['D3','D30','D26','T5','A18'], new:['D33','T33'],
+moves:[
+ {who:'Y', tag:'objection', say:'Separation of tasks is just “I am I, you are you.” “Individual psychology” is individualism that leads to isolation!',
+  pic:G({s:[0,0,'Separation\nof tasks','x'], i:[1.3,0,'Isolation?','bad']}, [['s','i','?']])},
+ {who:'P', tag:'definition', say:'“Individual” originally means “indivisible” — the smallest unit that can’t be split further.',
+  pic:G({i:[0,0,'in-dividual','me'], n:[1.3,0,'= cannot be\ndivided','act']}, [['i','n']])},
+ {who:'P', tag:'holism', say:'Adler rejected splitting mind from body, reason from emotion, conscious from unconscious. Tension makes cheeks blush; fear turns the face white.',
+  f:'D33: person = one indivisible whole',
+  pic:G({m:[0,0,'mind','me'], b:[1,0,'body','me'], r:[0,1,'reason','me'], e:[1,1,'emotion','me'], w:[2.3,0.5,'“I” as a whole','act']},
+        [['m','w'],['b','w'],['r','w'],['e','w']])},
+ {who:'Y', tag:'objection', say:'No — we understand people correctly precisely BECAUSE we separate mind and body, reason and emotion, conscious and unconscious.',
+  pic:G({m:[0,0,'mind | body','x'], r:[1.4,0,'reason | emotion','x']})},
+ {who:'P', tag:'proves', say:'When you shout, it’s “I as a whole” choosing to shout. “The emotion made me do it” splits you — and becomes a life-lie.',
+  f:'T33',
+  pic:G({l1:[-0.75,0,'Excuse','lbl'], e:[0,0,'Emotion','x'], s:[1.2,0,'made me shout','bad'],
+         l2:[-0.75,1,'Holism','lbl'], i:[0,1,'Whole “I”','me'], s2:[1.2,1,'chose to shout','act']}, [['e','s'],['i','s2']])},
+ {who:'P', tag:'reframe', say:'Separation of tasks doesn’t push people away. It untangles a mess of red, blue, green threads you mistook for “connection”.',
+  pic:G({t:[0,0,'Tangled threads\n(“connection”)','bad',170], u:[1.4,0,'Untangled:\nreal connection','act',170]}, [['t','u','separate tasks']])},
+ {who:'P', tag:'next', say:'Separation is the starting point of relationships, not the end. Today: where relationships should go.',
+  pic:G({s:[0,0,'Separation\nof tasks','me'], g:[1.4,0,'Goal = ?\n(§4.2)','goal']}, [['s','g','start → goal']])},
+],
+proofs:{T33:[
+ ['A person is one indivisible whole; the whole “I” chooses.','D33'],
+ ['So an emotion is not a separate agent that acts on “I”.','1'],
+ ['“The emotion made me do it” claims exactly such a separate agent.','2'],
+ ['Using that false split to avoid responsibility is a pretext.','D26'],
+ ['∴ “My emotion made me do it” is a life-lie.','3, 4'],
+]},
+essence:[
+  ['Y','Separation of tasks is “I am I, you are you” — individualism that isolates.'],
+  ['P','“Individual” means indivisible: mind, body, reason, emotion are one whole (D33).'],
+  ['Y','Separating them is how we understand people!'],
+  ['P','They differ, but the whole “I” chooses; “my emotion did it” is a life-lie (T33).'],
+  ['T','Separation of tasks untangles threads; it is the starting point of relationships, not isolation.']],
+take:'Individual = indivisible. The whole you chooses — emotions included. Separation of tasks untangles; it doesn’t isolate.'});
+</script>

@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Separate Tasks</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.3', uses:['A16','A9'], new:['D29','D30','A17','T27'],
+moves:[
+ {who:'Y', tag:'parent', say:'If my son wouldn’t study, I’d hire tutors, drag him by the ear. No dinner until homework — that’s how I was raised.',
+  pic:G({p:[0,0,'Parent forces','x'], s:[1.3,0,'Child studies?','me']}, [['p','s']])},
+ {who:'P', tag:'probe', say:'And did being forced make you love studying?  — “No. I just got through it.”',
+  pic:G({f:[0,0,'Forced study','x'], l:[1.3,0,'Love of study','act']}, [['f','l','','x']])},
+ {who:'P', tag:'test', say:'Ask: whose task is this? Find who ultimately receives the result of the choice.',
+  f:'D29: task(choice) = person who receives its result',
+  pic:G({c:[0,0,'A choice','me'], r:[1,0,'Who receives\nthe result?','goal'], t:[2,0,'= that person’s\ntask','act']}, [['c','r'],['r','t']])},
+ {who:'P', tag:'apply', say:'If the child doesn’t study, who fails the class, misses the school? The child. So studying is the child’s task.',
+  f:'T27',
+  pic:G({n:[0,0,'Doesn’t study','me'], f:[1.3,0,'Fails class','bad'], c:[2.6,0,'Received by:\nthe child','goal']}, [['n','f'],['f','c']])},
+ {who:'P', tag:'rule', say:'Separation of tasks: don’t intrude on others’ tasks. That’s all. Most relationship troubles come from intruding, or being intruded on.',
+  f:'D30 · A17',
+  pic:G({y:[0,0,'Your tasks','me',160], t:[1.5,0,'Their tasks','x',160]}, [['y','t','don’t cross','x'],['t','y','don’t cross','x']])},
+ {who:'Y', tag:'objection', say:'But it’s FOR his own good!',
+  pic:G({p:[0,0,'“For your\nown good”','me']})},
+ {who:'P', tag:'answer', say:'Often it’s for the parent: appearances, pride, control. The child senses it and rebels.',
+  f:'A9: effect = parent looks good ⇒ goal is the parent’s',
+  pic:G({f:[0,0,'“For your good”','me'], a:[1.4,0,'Parent’s image,\ncontrol','goal']}, [['f','a','real goal']])},
+ {who:'P', tag:'not neglect', say:'This isn’t ignoring the child. Know what he’s doing; tell him you’re ready to help when he wants. Just don’t intrude.',
+  pic:tb(['Approach', 'Knows?', 'Offers help?', 'Intrudes?'], [['Neglect','✗','✗','✗'],['Control','✓','—','✓'],['Separation','✓','✓','✗']])},
+ {who:'P', tag:'proverb', say:'“You can lead a horse to water, but you can’t make it drink.” Even a counselor can’t change a client. Only you can change you.',
+  pic:G({l:[0,0,'Lead to water','me'], d:[1.3,0,'Drink?','x']}, [['l','d','their task','-']])},
+],
+proofs:{T27:[
+ ['A task belongs to whoever receives the result of the choice.','D29'],
+ ['If the child doesn’t study, the results (falling behind, missing schools) land on the child.','observation'],
+ ['∴ Studying is the child’s task, not the parent’s.','1, 2'],
+]},
+essence:[
+  ['Y','A parent must force a child to study.'],
+  ['P','Whose task is it? Whoever receives the result of the choice (D29) — so studying is the child’s task (T27).'],
+  ['P','Don’t intrude, and don’t be intruded on (D30): most troubles come from intrusion (A17).'],
+  ['Y','It’s for his own good!'],
+  ['P','Often for the parent’s image. Not neglect: know, offer help, don’t take over.'],
+  ['T','Lead the horse to water; drinking is its task. Only you can change you.']],
+take:'One question: who receives the result? That person owns the task. Don’t intrude; offer help.'});
+</script>

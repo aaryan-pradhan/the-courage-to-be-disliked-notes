@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trust vs Confidence</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.3', uses:['D29','D22','D39','D20'], new:['D41','T45','T46'],
+moves:[
+ {who:'P', tag:'definition', say:'Trust has conditions — like a bank: “we lend this much, against this collateral.” Confidence has none: you believe unconditionally.',
+  f:'D41',
+  pic:tb(['', 'Trust', 'Confidence'], [['Conditions?','✓ collateral','✗ none'],['Example','bank loan','true friendship'],['If let down','withdraw','keep believing']])},
+ {who:'Y', tag:'objection', say:'Believe unconditionally? You’ll just get used and abused. Only a naive fool would do that!',
+  pic:G({c:[0,0,'Unconditional\nconfidence','me'], u:[1.4,0,'Get used?','bad']}, [['c','u','?']])},
+ {who:'P', tag:'mirror', say:'Flip it: if someone kept believing in you even after you used them — could you keep betraying them?',
+  pic:G({p:[0,0,'They keep\nbelieving','act'], b:[1.4,0,'You betray\nagain?','bad']}, [['p','b','hard to','x']])},
+ {who:'P', tag:'opposite', say:'The opposite of confidence is doubt. Build on doubt and the other person sees it in your eyes instantly. Nothing deep can grow.',
+  f:'T45',
+  pic:G({d:[0,0,'Doubt','bad'], s:[1,0,'They sense it','x'], n:[2,0,'No deep\nrelationship','bad'], c:[0,1,'Confidence','me'], y:[2,1,'Deep relationship\npossible','act']},
+        [['d','s'],['s','n'],['c','y']])},
+ {who:'P', tag:'separate', say:'Whether they take advantage of you is THEIR task. Your only question: what should I do?',
+  f:'T46',
+  pic:G({c:[0,0,'My confidence','me'], a:[1.4,0,'Whether they\nabuse it','x']}, [['c','a','mine | theirs','-n']])},
+ {who:'P', tag:'tool', say:'This isn’t morality. Confidence is a means to build a better, horizontal relationship. Don’t want that with someone? Then cut it — that’s your task.',
+  pic:G({w:[0,0.5,'Want a deeper\nrelationship?','goal'], c:[1.4,0,'Yes → confidence','act'], s:[1.4,1,'No → cut it','x']}, [['w','c'],['w','s']])},
+ {who:'P', tag:'example', say:'Suspect your partner is cheating, search for proof — and you’ll find “evidence” everywhere, even if she isn’t.',
+  pic:G({d:[0,0,'Doubt','bad'], s:[1,0,'Search for\nproof','me'], e:[2,0,'“Evidence”\neverywhere','bad']}, [['d','s'],['s','e','always finds']])},
+ {who:'P', tag:'trade-off', say:'Shallow relationship: small pain when it ends, small joy each day. Courage to go deep comes from self-acceptance.',
+  pic:tb(['Relationship', 'Pain if it ends', 'Daily joy'], [['Shallow','small','small'],['Deep (confidence)','bigger','bigger']])},
+ {who:'P', tag:'emotion', say:'When you’re hurt, be sad to your heart’s content. Running from pain is what stops deep relationships.',
+  pic:G({s:[0,0,'Be fully sad','me'], m:[1.3,0,'Move on','act'], r:[0,1,'Escape the pain','x'], k:[1.3,1,'Stuck, shallow','bad']}, [['s','m'],['r','k']])},
+],
+proofs:{
+ T45:[
+  ['Doubt in you is detected by the other person.','observation'],
+  ['A person who senses you lack confidence in them keeps their distance.','observation'],
+  ['A relationship where both keep their distance cannot become deep.','1, 2'],
+  ['∴ A deep relationship can only be built on confidence, not doubt.','3'],
+ ],
+ T46:[
+  ['A task belongs to whoever receives the result of the choice.','D29'],
+  ['The choice to take advantage is theirs, and so are its results.','observation'],
+  ['∴ Whether someone abuses your confidence is their task, not yours.','1, 2'],
+ ]},
+essence:[
+  ['P','Trust is conditional, like a bank loan; confidence is unconditional (D41).'],
+  ['Y','You’ll just get used!'],
+  ['P','The opposite of confidence is doubt — and doubt is seen instantly, so no depth (T45).'],
+  ['P','Whether they abuse your confidence is their task (T46); if you don’t want the relationship, cut it.'],
+  ['T','Deep relationships, with their bigger joy, need confidence — and the courage for it comes from self-acceptance.']],
+take:'Trust has conditions; confidence has none. Depth needs confidence — and if someone abuses it, that’s their task.'});
+</script>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Courage to Be Normal</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.9', uses:['D45','A6','D39','D19','D15'], new:['D46'],
+moves:[
+ {who:'Y', tag:'objection', say:'Not everyone can be a genius or an honor student. So for the “losers”, there’s nothing left but being especially bad!',
+  pic:G({n:[0,0,'Can’t be\nespecially good','x'], b:[1.4,0,'Only option:\nespecially bad?','bad']}, [['n','b','?']])},
+ {who:'P', tag:'Socrates', say:'Yes — the Socratic paradox: to such a child, even violence and theft feel like “good” (good for me).',
+  f:'A6',
+  pic:G({v:[0,0,'Violence, theft','bad'], g:[1.4,0,'“good for me”','x']}, [['v','g','judged']])},
+ {who:'P', tag:'definition', say:'Adler’s answer: the courage to be normal.',
+  f:'D46',
+  pic:G({g:[0,0,'Especially\ngood','x'], n:[1,0,'Normal','act'], b:[2,0,'Especially\nbad','x']}, [['g','n',''],['b','n','']])},
+ {who:'P', tag:'why special?', say:'Why must you be special? Because you can’t accept your normal self. So when “especially good” fails, you leap to the other extreme.',
+  pic:G({c:[0,0,'Can’t accept\nnormal self','bad'], s:[1.3,0,'Must be\nspecial','x'], e:[2.6,0,'Good fails →\nbad','bad']}, [['c','s'],['s','e']])},
+ {who:'P', tag:'key', say:'Normal is not incapable. And isn’t everyone normal, really? No need to flaunt superiority.',
+  pic:tb(['Claim', 'True?'], [['normal = incapable','✗'],['everyone is basically normal','✓'],['must prove superiority','✗ (D19)']])},
+ {who:'Y', tag:'objection', say:'Accept a humdrum life and leave no trace? Napoleon, Einstein, Socrates never accepted “normal”! You’re abolishing geniuses!',
+  pic:G({n:[0,0,'“Normal”','x'], g:[1.4,0,'Napoleon,\nEinstein…','goal']}, [['n','g','vs','n']])},
+ {who:'P', tag:'probe', say:'So you believe you need lofty goals in life?  — “Obviously!”  (answered in §5.10)',
+  pic:G({l:[0,0,'Lofty goals\nneeded?','goal']})},
+],
+essence:[
+  ['Y','Not everyone can be a genius — so the rest must be especially bad?'],
+  ['P','To them, even bad acts feel “good for me”. The answer: the courage to be normal (D46).'],
+  ['P','Needing to be special comes from not accepting your normal self. Normal ≠ incapable.'],
+  ['Y','Napoleon and Einstein never accepted normal — we need lofty goals!'],
+  ['T','Normal is not inferior. (Lofty goals → answered in §5.10.)']],
+take:'Needing to be special comes from rejecting your normal self. Normal isn’t incapable — it takes courage to be normal.'});
+</script>

@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Greatest Life-Lie</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.13', uses:['D48','T55','D26','D47'], new:['D49'],
+moves:[
+ {who:'P', tag:'example', say:'You want to get into a university but don’t study. That’s not living here and now. Do a few formulas, a few words each day — dance the dance.',
+  pic:G({a:[0,0,'today:\n5 formulas','me',110], b:[0.6,0,'today:\n10 words','me',110], c:[1.2,0,'today:\n1 chapter','me',110], e:[2.3,0,'“This is what\ntoday was for”','act']},
+        [['a','b'],['b','c'],['c','e']])},
+ {who:'P', tag:'reframe', say:'Your father probably danced the dance of his daily work, earnestly. If so, his life was a happy one.',
+  pic:G({f:[0,0,'Father’s work\nday by day','me'], h:[1.4,0,'Happy, if\ndanced earnestly','act']}, [['f','h']])},
+ {who:'P', tag:'warning', say:'Treating now as a preparation period — “I’ll really do it when the time comes” — postpones life. Days pass in dull monotony.',
+  pic:G({n:[0,0,'Now = waiting\nroom','bad'], l:[1.4,0,'Life postponed','bad']}, [['n','l']])},
+ {who:'Y', tag:'admission', say:'I have no dream, no goal. I don’t know what dance to do.',
+  pic:G({n:[0,0,'No goal','x']})},
+ {who:'P', tag:'answer', say:'That’s fine. Living earnestly here and now IS the dance. Be earnest — not too serious.',
+  pic:tb(['', 'Earnest', 'Too serious'], [['Means','do today’s part fully','heavy, tense'],['Adler wants','✓','✗']])},
+ {who:'P', tag:'complete', say:'Lived this way, life is always complete. A life ending at 20 and one ending at 90 are both complete, both happy.',
+  f:'T55',
+  pic:G({a:[0,0,'Life ends\nat 20','me'], b:[1.3,0,'Life ends\nat 90','me'], c:[0.65,1,'Both complete','act']}, [['a','c'],['b','c']])},
+ {who:'P', tag:'definition', say:'The greatest life-lie of all: not living here and now — dimly lighting past and future and believing you see something.',
+  f:'D49',
+  pic:G({p:[0,0,'Invented past','x'], n:[1,0,'NOW\n(ignored)','bad'], f:[2,0,'Invented\nfuture','x']}, [['n','p','looks at'],['n','f','looks at']])},
+ {who:'P', tag:'call', say:'Cast away the life-lie. Shine a bright spotlight on here and now. It’s not yesterday or tomorrow that decides — it’s now.',
+  pic:G({n:[0,0,'Here and now','act']})},
+],
+essence:[
+  ['P','Study a little each day: that is dancing the dance, and today is complete in itself.'],
+  ['P','Treating now as preparation postpones life into monotony.'],
+  ['Y','I have no dream to dance to.'],
+  ['P','Fine: living earnestly here and now is the dance. Earnest, not serious.'],
+  ['T','D49: the greatest life-lie is not living here and now. Lived this way, life is always complete.']],
+take:'The greatest life-lie is treating today as rehearsal. Dance today in earnest; then every moment is already complete.'});
+</script>

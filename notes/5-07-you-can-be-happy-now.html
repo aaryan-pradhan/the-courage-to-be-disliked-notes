@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You Can Be Happy Now</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.7', uses:['A21','D42','D29','A22','T26','D27','A8'], new:['D44','T51','T52'],
+moves:[
+ {who:'Y', tag:'doubt', say:'Is happiness just a little comfort inside good relationships? Is that all life is for?',
+  pic:G({r:[0,0,'Good\nrelationships','me'], h:[1.4,0,'All of\nhappiness?','goal']}, [['r','h','?']])},
+ {who:'P', tag:'story', say:'My first Adler lecture: “Those who hear this talk can be happy right now. Those who don’t, never.” I recoiled — then realized I, a philosopher of happiness, wasn’t happy.',
+  pic:G({t:[0,0,'Thought about\nwhat happiness is','x',170], h:[1.5,0,'Never asked how\nto BE happy','bad',170]}, [['t','h','but']])},
+ {who:'P', tag:'root', say:'The greatest unhappiness is not liking yourself. And the only way to feel worth is “I am of use to someone.”',
+  f:'A21',
+  pic:G({u:[0,0,'Of use to\nsomeone','me'], w:[1.3,0,'Worth','act'], l:[2.6,0,'Like yourself','act']}, [['u','w'],['w','l']])},
+ {who:'P', tag:'invisible', say:'The contribution needn’t be visible. Whether it was useful is THEIR task — you can’t even know. All you need is the felt sense: a feeling of contribution.',
+  pic:G({c:[0,0,'Your contribution','me',165], j:[1.5,0,'Was it useful?\n(their task)','x',165], f:[0,1,'Feeling of\ncontribution','act',165]}, [['c','j','can’t know','-'],['c','f','enough']])},
+ {who:'P', tag:'definition', say:'So: happiness is the feeling of contribution.',
+  f:'D44',
+  pic:G({f:[0,0,'Feeling of\ncontribution','me'], h:[1.4,0,'= Happiness','act']}, [['f','h']])},
+ {who:'Y', tag:'objection', say:'But you said everyone is of use just by being. Then everyone is happy?!',
+  pic:G({b:[0,0,'Of use by\nbeing (A22)','me'], e:[1.4,0,'Everyone happy?','bad']}, [['b','e','?']])},
+ {who:'P', tag:'precision', say:'Everyone CAN be happy. Not everyone IS. You still have to feel it — on the level of acts or of being.',
+  f:'T51: can ≠ is',
+  pic:tb(['', 'Can be happy?', 'Is happy?'], [['Has feeling of contribution','✓','✓'],['Lacks it','✓','✗ (not yet)']])},
+ {who:'Y', tag:'gotcha', say:'Recognition gives a feeling of contribution. So recognition leads to happiness — you’ve admitted we need it!',
+  pic:G({r:[0,0,'Recognition','me'], f:[1.3,0,'Feeling of\ncontribution','me'], h:[2.6,0,'Happiness','act']}, [['r','f'],['f','h']])},
+ {who:'P', tag:'proves', say:'Happiness via recognition means living by others’ wishes — no freedom. Have the feeling of contribution directly, and the desire for recognition disappears.',
+  f:'T52',
+  pic:G({r:[0,0,'Via recognition','x'], u:[1.4,0,'Unfree (T26)','bad'], d:[0,1,'Direct feeling of\ncontribution','me',165], f:[1.4,1,'Free + happy','act']},
+        [['r','u'],['d','f']])},
+],
+proofs:{
+ T51:[
+  ['Happiness is the feeling of contribution.','D44'],
+  ['That feeling is subjective: it does not need visible results or anyone’s verdict.','D29'],
+  ['Even on the level of being, a person is of use.','A22'],
+  ['How you see yourself is chosen now.','A8'],
+  ['∴ Anyone can be happy now — though they must actually feel it.','1–4'],
+ ],
+ T52:[
+  ['Seeking recognition means living by others’ expectations — unfree.','T26'],
+  ['Happiness is the feeling of contribution, and you can have it directly.','D44, T51'],
+  ['Someone who already feels “I am of use” has no need for anyone to confirm it.','2'],
+  ['∴ With a real feeling of contribution, the desire for recognition disappears.','1–3'],
+ ]},
+essence:[
+  ['Y','Is happiness just a little comfort in relationships?'],
+  ['P','Greatest unhappiness: not liking yourself. Worth comes from “I am of use to someone”.'],
+  ['P','Whether you were really useful is their task — the felt sense is enough.'],
+  ['P','Happiness IS the feeling of contribution (D44). Everyone can be happy, not everyone is.'],
+  ['Y','Then recognition is the road to happiness!'],
+  ['T','T52: happiness via recognition is unfree; with a real feeling of contribution, the need for recognition disappears.']],
+take:'Happiness = the feeling of contribution. You can have it now, without anyone’s approval — and then you no longer need approval.'});
+</script>

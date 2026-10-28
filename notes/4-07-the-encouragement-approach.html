@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Encouragement Approach</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.7', uses:['D30','D20','T37','T10','D12','T26'], new:['D36','D37','T39'],
+moves:[
+ {who:'P', tag:'root', say:'Why do people intervene in others’ tasks? Vertical thinking: “they’re below me, I’m right, I’ll steer them.”',
+  pic:G({v:[0,0,'“I’m above\nand right”','bad'], i:[1.4,0,'Intervene:\nsteer them','bad']}, [['v','i']])},
+ {who:'Y', tag:'objection', say:'But when someone is suffering in front of you, you can’t just do nothing!',
+  pic:G({s:[0,0,'Someone\nsuffering','x'], n:[1.3,0,'Do nothing?','bad']}, [['s','n','?']])},
+ {who:'P', tag:'definition', say:'Don’t ignore it. Give assistance — not intervention. Assistance helps them gain the confidence to do their own task.',
+  f:'D36',
+  pic:tb(['', 'Intervention', 'Assistance'], [['Says','“You must study!”','“How can I help?”'],['Relation','vertical','horizontal'],['Whose task?','taken over','left with them'],['Result','dependence','confidence']])},
+ {who:'P', tag:'definition', say:'Assistance based on a horizontal relationship — no praise, no rebuke — is called encouragement.',
+  f:'D37',
+  pic:G({s:[0,0,'Separation\nof tasks','me'], h:[1,0,'Horizontal\nrelationship','me'], e:[2,0,'Encouragement','act']}, [['s','h','then'],['h','e','then']])},
+ {who:'P', tag:'diagnosis', say:'People don’t avoid tasks for lack of ability. They’ve lost the courage. So restore courage first.',
+  f:'T10 again',
+  pic:G({a:[0,0,'Ability ✓','act'], c:[0,1,'Courage ✗','bad'], t:[1.3,0.5,'Task avoided','x']}, [['c','t','cause']])},
+ {who:'Y', tag:'objection', say:'That’s just praise! Being praised makes you realize your ability and regain courage.',
+  pic:G({p:[0,0,'Praise','x'], c:[1.3,0,'Courage?','goal']}, [['p','c','?']])},
+ {who:'P', tag:'proves', say:'No. The more you’re praised, the more you believe you have no ability. Praise is judgment from someone above.',
+  f:'T39',
+  pic:G({p:[0,0,'Being praised','x'], b:[1,0,'Accept: they\nare above','x'], n:[2,0,'“I lack\nability”','bad']}, [['p','b'],['b','n']])},
+ {who:'P', tag:'cost', say:'When praise is your goal, you live by another’s values. Aren’t you tired of living up to your parents’ expectations?',
+  f:'T26',
+  pic:G({p:[0,0,'Goal: praise','me'], v:[1.3,0,'Their values\nrun your life','bad']}, [['p','v']])},
+],
+proofs:{T39:[
+ ['Praise is judgment passed by someone above onto someone below.','T37'],
+ ['To value being praised is to accept that position below.','1'],
+ ['Being below, in this judgment, means having less ability than the judge.','1, D20'],
+ ['∴ The more you are praised (and want it), the more you believe you lack ability.','2, 3'],
+]},
+essence:[
+  ['P','Intervention comes from vertical thinking: “I’m above and right.”'],
+  ['Y','But you can’t ignore someone suffering!'],
+  ['P','Give assistance, not intervention (D36): help them gain confidence to do their own task.'],
+  ['P','Horizontal assistance is encouragement (D37); the issue is lost courage, not lack of ability.'],
+  ['T','T39: praise teaches “I lack ability”. Separate tasks → horizontal relationship → encouragement.']],
+take:'Encouragement = help on equal footing. Praise quietly teaches “you can’t do it without me.”'});
+</script>

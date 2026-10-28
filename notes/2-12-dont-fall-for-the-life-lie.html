@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Don’t Fall for the Life-Lie</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.12', uses:['A2','A9','D24','A7','A8','D12'], new:['T23','D26','T24'],
+moves:[
+ {who:'P', tag:'claim', say:'You don’t dislike Mr. A because of his flaws. You decided to dislike him first, then went looking for flaws.',
+  f:'goal(avoid A) ⇒ search for flaws ⇒ dislike',
+  pic:G({l1:[-0.7,0,'Youth','lbl'], f:[0,0,'His flaws','x'], d:[1,0,'Dislike','me'],
+         l2:[-0.7,1,'Adler','lbl'], g:[0,1,'Goal: avoid\nhim','goal'], s:[1,1,'Find flaws','me'], d2:[2,1,'Dislike','me']},
+        [['f','d'],['g','s'],['s','d2']])},
+ {who:'Y', tag:'objection', say:'Backward! He did something I didn’t like. Otherwise I’d have no reason.',
+  pic:G({a:[0,0,'His action','past'], b:[1.3,0,'My dislike','me']}, [['a','b','causes']])},
+ {who:'P', tag:'example', say:'A partner suddenly can’t stand his eating, his snoring — none of which bothered her months ago. He didn’t change. Her goal did: end it.',
+  pic:plot({pts:[['months ago',0.1],['decides to\nleave',0.9],['now',0.95]], y:'irritation', hi:'#f2b84b'})},
+ {who:'P', tag:'proves', say:'People can find flaws in anyone — even someone of perfect character. So flaws can’t explain the dislike. The goal does.',
+  f:'T23',
+  pic:G({a:[0,0,'Flaws findable\nin everyone','x',160], b:[1.4,0,'Flaws can’t explain\nwhy THIS person','bad',170], g:[2.8,0,'Goal explains it','goal']},
+        [['a','b'],['b','g']])},
+ {who:'P', tag:'definition', say:'Making up pretexts to avoid your life tasks — blaming others or your environment — is the “life-lie”.',
+  f:'D26: pretext ⇒ avoid life task',
+  pic:G({p:[0,0.5,'“It’s their fault”\n“It’s my situation”','bad',180], a:[1.5,0.5,'Avoid life tasks','bad']}, [['p','a','life-lie']])},
+ {who:'Y', tag:'objection', say:'You know nothing about my parents or my brother. How can you call me a liar?',
+  pic:G({k:[0,0,'“You don’t\nknow my past”','me']})},
+ {who:'P', tag:'answer', say:'I know one thing: you, and no one else, chose your lifestyle. So the responsibility is clear.',
+  f:'A7 ∧ A8 ⇒ chooser = you ⇒ responsibility = yours   (T24)',
+  pic:G({c:[0,0,'You chose your\nlifestyle (A7, A8)','goal',170], r:[1.4,0,'Responsibility:\nyours','act']}, [['c','r']])},
+ {who:'P', tag:'not morals', say:'This is not about good and evil. It’s about courage.',
+  pic:tb(['Life-lie is a question of…', ''], [['good vs evil','✗'],['courage','✓ (D12)']])},
+],
+proofs:{
+ T23:[
+  ['People can find flaws in anyone, even a person of perfect character.','observation'],
+  ['So flaws are present both in people you like and people you dislike.','1'],
+  ['Something present in both cases cannot explain the difference between them.','logic'],
+  ['Every behavior, including disliking, serves a goal.','A2'],
+  ['∴ What decides the dislike is a goal (avoid this relationship); flaws are found to serve it.','3, 4'],
+ ],
+ T24:[
+  ['Your lifestyle was chosen by you, and is re-chosen every moment.','A7, A8'],
+  ['Responsibility for a choice belongs to the one who chooses.','definition'],
+  ['∴ Responsibility for your lifestyle can’t be shifted to others or the environment.','1, 2'],
+ ]},
+essence:[
+  ['P','You decided to avoid Mr. A first, then found his flaws.'],
+  ['Y','Backward — his actions came first!'],
+  ['P','A partner suddenly hates his snoring once she has decided to leave. Flaws can be found in anyone.'],
+  ['P','Pretexts to avoid life tasks are the life-lie (D26).'],
+  ['T','T23: the goal comes first, the flaws later. T24: you chose your lifestyle, so the responsibility is yours — a matter of courage, not morals.']],
+take:'The goal comes first; the flaws are found later. Blaming others to dodge your life tasks is the life-lie.'});
+</script>

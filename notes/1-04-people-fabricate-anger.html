@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>People Fabricate Anger</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.4', uses:['D4','D5','A2'], new:['T4','T5'],
+moves:[
+ {who:'Y', tag:'example', say:'A waiter spilled coffee on my new jacket. I exploded and shouted. Cause, then anger, then shout.',
+  f:'spill ⇒ anger ⇒ shout   (etiology)',
+  pic:G({s:[0,0,'Coffee spilled','past'], a:[1,0,'Anger','me'], h:[2,0,'Shout','act']}, [['s','a','causes'],['a','h','forces']])},
+ {who:'P', tag:'reductio', say:'If anger forces you, then with a knife you’d be excused for stabbing him. Nobody accepts that.',
+  f:'if anger ⇒ act is forced, then nobody is responsible for anything done in anger  ✗',
+  pic:G({a:[0,0,'Anger','me'], k:[1,0,'Stab','bad'], e:[2,0,'“not my fault”','bad']}, [['a','k','forced?'],['k','e','','x']])},
+ {who:'P', tag:'flip', say:'Reverse it. Your goal came first: make him submit. You produced anger so you could shout.',
+  f:'goal ⇒ anger ⇒ shout   (teleology)',
+  pic:G({g:[0,0,'Goal:\nmake him submit','goal'], a:[1,0,'Make anger','me'], h:[2,0,'Shout','act']}, [['g','a'],['a','h']])},
+ {who:'P', tag:'evidence', say:'You could have just explained calmly: he’d have apologized, wiped the jacket, maybe paid for cleaning. You knew that. Explaining felt like too much trouble — anger was the shortcut.',
+  f:'calm words also reach the goal; anger = cheaper tool',
+  pic:G({g:[0,0.5,'Goal: get\nhim to comply','goal'], c:[1.4,0,'Calm words\n(more effort)','x'], a:[1.4,1,'Anger\n(shortcut)','me']}, [['g','c','would work'],['g','a','chosen']])},
+ {who:'Y', tag:'objection', say:'Anger is instant! There was no time to plan anything.',
+  f:'instant ⇒ uncontrollable ?',
+  pic:G({i:[0,0,'Anger is instant','x'], u:[1.3,0,'So it can’t be\ncontrolled?','bad']}, [['i','u','?']])},
+ {who:'P', tag:'refutes', say:'A mother is yelling at her daughter. The phone rings: the teacher. She’s instantly polite. She hangs up: yelling again.',
+  f:'anger switched OFF and ON at will  ⇒  controllable (T4)',
+  pic:plot({pts:[['yelling',1],['phone:\nteacher',0.08],['hangs up',1]], y:'anger'})},
+ {who:'P', tag:'conclusion', say:'Anger is a tool. Taken out when useful, put away when not.',
+  f:'anger ∈ means(goal)   (T5)',
+  pic:G({g:[0,0,'Goal:\noverpower daughter','goal'], a:[1.3,0,'Anger (tool)\ntaken out','me'],
+         p:[0,1,'Teacher calls','past'], q:[1.3,1,'Anger\nput away','me']}, [['g','a'],['p','q']])},
+ {who:'Y', tag:'accusation', say:'Under your gentle mask you’re a nihilist — reducing emotions to tools, full of distrust for human beings!',
+  f:'(answered in §1.5)',
+  pic:G({t:[0,0,'Emotions = tools','me'], n:[1.4,0,'Nihilism?','bad']}, [['t','n','?']])},
+],
+proofs:{
+ T4:[
+  ['Youth: once anger starts, nobody can switch it off.','claim'],
+  ['The mother switches it off instantly for the teacher, then back on.','observation'],
+  ['∴ The claim is false: anger is not uncontrollable by nature.','1, 2'],
+ ],
+ T5:[
+  ['Every behavior and emotion is a means toward a present goal.','A2'],
+  ['Anger can be switched on and off.','T4'],
+  ['∴ Anger is a tool, used toward a goal (here: make the other person submit).','1, 2'],
+ ]},
+essence:[
+  ['Y','The spill caused my anger, and my anger made me shout.'],
+  ['P','If anger forced acts, a stabbing in anger would be excused. Nobody accepts that.'],
+  ['P','Reverse it: the goal (make him submit) came first; anger was produced as the cheapest tool.'],
+  ['Y','Anger is too fast to be chosen!'],
+  ['P','A mother switches anger off for the teacher’s call and back on after.'],
+  ['T','T4: anger is controllable. T5: emotions are tools for goals.']],
+take:'Anger isn’t a storm that hits you. It’s a tool you pick up for a goal — and can put down.'});
+</script>

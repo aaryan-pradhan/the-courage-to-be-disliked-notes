@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Like You’re Dancing</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.11', uses:['D47','T54'], new:['D48','T55'],
+moves:[
+ {who:'Y', tag:'objection', say:'You deny planning AND effort! A violinist trains for years to join an orchestra; a lawyer studies for the bar. No plans, no results.',
+  pic:G({p:[0,0,'Plans + effort','me'], r:[1.3,0,'Violinist,\nlawyer','act']}, [['p','r']])},
+ {who:'P', tag:'reframe', say:'Did they really live “en route”? The violinist lived each piece, each measure, each note — here and now.',
+  pic:G({a:[0,0,'this note','me',90], b:[0.5,0,'this note','me',90], c:[1,0,'this note','me',90], o:[2,0,'“I’ve made it\nthis far”','act']},
+        [['a','b'],['b','c'],['c','o','looks up']])},
+ {who:'P', tag:'image', say:'Live like you’re dancing. Dancing itself is the goal. You may end up somewhere — you move while dancing — but there’s no destination.',
+  pic:G({d:[0,0,'Dance now','me'], s:[1.3,0,'end up\nsomewhere','act']}, [['d','s','as a result','-']])},
+ {who:'Y', tag:'objection', say:'A life with no destination? Who would accept such an unsteady life, bending whichever way the wind blows?',
+  pic:G({d:[0,0,'No destination','x'], w:[1.4,0,'Blown by\nthe wind?','bad']}, [['d','w','?']])},
+ {who:'P', tag:'definition', say:'Aristotle: kinesis = motion from start to end, best done fast and efficiently, incomplete until you arrive. Energeia = what is “now forming” is already “formed”.',
+  f:'D48',
+  pic:tb(['', 'Kinesis', 'Energeia'], [['Goal','the arrival','the activity itself'],['Before arrival','incomplete','complete'],['Express train OK?','✓ faster is better','✗ misses the point'],['Example','commute','dance, journey']])},
+ {who:'P', tag:'example', say:'A journey to Egypt: you don’t rush to the pyramid and straight home. You are on the journey from the moment you step outside.',
+  pic:G({h:[0,0,'Leave home','me'], w:[1,0,'on the way','me'], p:[2,0,'Pyramid','goal']}, [['h','w','already\nthe journey'],['w','p','already\nthe journey']])},
+ {who:'P', tag:'mountain', say:'If the goal is the summit, take a helicopter. If the goal is climbing, then reaching the top doesn’t matter.',
+  pic:tb(['Goal', 'Helicopter OK?', 'Miss the top =', 'Type'], [['the summit','✓','failure','kinesis'],['the climbing','✗','still complete','energeia']])},
+],
+proofs:{T55:[
+ ['In energeia, the process itself is the result.','D48'],
+ ['So at any moment of the process, the result already exists.','1'],
+ ['A life lived energeially is that kind of process.','D47'],
+ ['∴ An energeial life is complete at every moment — ending at 20 or at 90.','2, 3'],
+]},
+essence:[
+  ['Y','Violinists and lawyers needed plans and effort.'],
+  ['P','They lived each note and each page here and now, then looked up: “I’ve made it this far.”'],
+  ['P','Kinesis is incomplete until arrival; energeia (dance, journey) is complete as it happens (D48).'],
+  ['P','If the goal is the summit, take a helicopter; if it is climbing, reaching the top doesn’t matter.'],
+  ['T','T55: an energeial life is complete at every moment.']],
+take:'Kinesis is a commute; energeia is a dance. Dance each moment, and life is complete at every point — wherever you end up.'});
+</script>

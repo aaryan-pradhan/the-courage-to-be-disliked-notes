@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unhappiness Is Chosen</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.8', uses:['T7','T2'], new:['D10','A6','A7','T8'],
+moves:[
+ {who:'Y', tag:'objection', say:'Some are born rich with kind parents, some poor with cruel ones. Unhappiness from birth exists.',
+  f:'birth ⇒ unhappiness ?',
+  pic:G({l:[0,0,'Born lucky','past'], u:[0,1,'Born unlucky','past'], h:[1.3,1,'Unhappy\nfrom birth?','bad']}, [['u','h','?']])},
+ {who:'P', tag:'refuses', say:'Fixating on your birth changes nothing. We need renewal, not replacement (T7). I won’t accept “unhappy from birth”.',
+  f:'birth ⇏ unhappiness   (same shape as T2)',
+  pic:G({b:[0,0,'Birth','past'], u:[1.3,0,'Unhappiness','act']}, [['b','u','determines','x']])},
+ {who:'P', tag:'claim', say:'You are unhappy because you chose to be.',
+  f:'unhappiness is chosen   (A7)',
+  pic:G({y:[0,0,'You chose','me'], u:[1.3,0,'Unhappy','act']}, [['y','u']])},
+ {who:'Y', tag:'objection', say:'Nonsense. The world is full of people who desire evil.',
+  pic:G({e:[0,0,'People desire evil?','bad',190]})},
+ {who:'P', tag:'definition', say:'Socrates: “No one desires evil.” In Greek, good just means “good for me”. Even a criminal does what he judges good for him.',
+  f:'∀ choice c: the chooser judges c beneficial   (D10, A6)',
+  pic:tb(['Greek', 'Means', 'Moral?'], [['agathon (good)','beneficial to me','✗'],['kakon (evil)','not beneficial to me','✗']])},
+ {who:'P', tag:'proves', say:'So at some point, you judged “being unhappy” to be good for you. Why? We’ll find out (Night 2).',
+  f:'A7 ∧ A6  ⇒  T8',
+  pic:G({a:[0,0,'Unhappiness\nis chosen (A7)','goal'], b:[0,1,'Choices are judged\nbeneficial (A6)','goal',170],
+         t:[1.4,0.5,'Unhappiness was\njudged useful (T8)','act',170]}, [['a','t'],['b','t']])},
+],
+proofs:{T8:[
+ ['Your lasting way of being, including being unhappy, is chosen by you.','A7'],
+ ['Every choice is of what the chooser judges beneficial at that moment.','A6'],
+ ['∴ If you are unhappy, at some point you judged being unhappy beneficial to you.','1, 2'],
+]},
+notes:{T8:'“Beneficial” here is D10 (good for me), not moral good. Why unhappiness could be useful is left open.'},
+essence:[
+  ['Y','Some are born lucky, some unlucky: unhappiness from birth exists.'],
+  ['P','Fixating on birth changes nothing; birth doesn’t determine unhappiness. You chose it.'],
+  ['Y','Absurd — the world is full of people who desire evil.'],
+  ['P','“No one desires evil”: good means “beneficial to me”. Everyone chooses what they judge good for them.'],
+  ['T','T8: if you are unhappy, at some point you judged unhappiness beneficial. (Why → Night 2.)']],
+take:'No one picks what they think is bad for them. If you’re unhappy, part of you judged it useful.'});
+</script>

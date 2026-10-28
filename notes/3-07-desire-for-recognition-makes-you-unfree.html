@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recognition Makes You Unfree</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.7', uses:['D27','T26','D30','D26'], new:['T30'],
+moves:[
+ {who:'Y', tag:'outburst', say:'“Do what you like” is cheap advice from strangers. Parents who say “get a stable job” are taking responsibility. Separation of tasks — you monster!',
+  pic:G({s:[0,0,'Strangers: “do\nwhat you like”','x',165], p:[1.4,0,'Parents: “stable\njob”','me',165]})},
+ {who:'Y', tag:'admission', say:'Knowing what others expect is easy. Knowing what I want is hard. Maybe I WANT someone to decide for me.',
+  pic:tb(['Path', 'Difficulty', 'Get lost?'], [['Others’ tracks','easy','✗'],['Your own path','hard','✓ sometimes']])},
+ {who:'Y', tag:'admission', say:'With God gone, someone has to watch me. Other people’s eyes are my guide to living decently.',
+  pic:G({g:[0,0,'God watching\n(gone)','x'], o:[1.4,0,'Others’ eyes =\nmy guide','me']}, [['g','o','replaced by']])},
+ {who:'P', tag:'question', say:'Signposts, yes — but a very unfree way to live. So why choose it?',
+  pic:G({o:[0,0,'Others’ eyes','me'], u:[1.3,0,'Unfree','bad']}, [['o','u']])},
+ {who:'P', tag:'reframe', say:'Your “desire for recognition” is really this: you don’t want to be disliked by anyone.',
+  f:'desire for recognition ≈ want(disliked by nobody)',
+  pic:G({r:[0,0,'Desire for\nrecognition','me'], n:[1.4,0,'“Disliked by\nno one”','goal']}, [['r','n','really =']])},
+ {who:'P', tag:'proves', say:'To be disliked by no one, swear loyalty to all ten people. Like a populist politician — impossible promises, lies exposed, more suffering.',
+  f:'T30',
+  pic:G({y:[0.5,1,'You','me'], a:[0,0,'A wants X','x'], b:[1,0,'B wants not-X','x'], c:[0.5,2,'Lies exposed','bad']},
+        [['y','a','promise X'],['y','b','promise not-X'],['y','c']])},
+ {who:'P', tag:'conclusion', say:'Living for others’ expectations means lying to yourself and to everyone around you.',
+  pic:G({e:[0,0,'Live for others’\nexpectations','me',170], l:[1.4,0,'Lie to self\nand others','bad']}, [['e','l']])},
+ {who:'Y', tag:'objection', say:'So be egocentric and do whatever you please?',
+  pic:G({e:[0,0,'Egocentric?','bad']})},
+ {who:'P', tag:'flip', say:'Separating tasks isn’t egocentric. INTRUDING is — like parents forcing study and choosing marriages.',
+  pic:tb(['Act', 'Egocentric?'], [['Separate tasks','✗'],['Intrude on others’ tasks','✓']])},
+ {who:'P', tag:'life-lie', say:'An adult who chose an unfree life calls a free young person “hedonist” — a life-lie to accept his own unfreedom.',
+  f:'D26',
+  pic:G({a:[0,0,'Unfree adult','x'], c:[1.3,0,'“Hedonist!”','bad'], y:[2.6,0,'Free youth','act']}, [['a','c'],['c','y']])},
+],
+proofs:{T30:[
+ ['Different people expect different, often incompatible things (A wants X, B wants not-X).','observation'],
+ ['To be disliked by no one, you must satisfy every one of them.','definition'],
+ ['Satisfying both X and not-X is impossible.','logic'],
+ ['∴ Being disliked by no one is impossible; trying forces broken promises and lies.','1–3'],
+]},
+essence:[
+  ['Y','“Do what you like” is cheap; parents giving direction are being responsible. Maybe I want someone to decide for me.'],
+  ['Y','Without God, others’ eyes are my guide.'],
+  ['P','Desire for recognition really means “disliked by no one” — which needs loyalty to all ten people.'],
+  ['P','Like a populist making contradictory promises: lies come out (T30).'],
+  ['T','Living for others’ expectations is lying to yourself and everyone. Intruding — not separating — is the egocentric act.']],
+take:'“Recognition” really means “disliked by nobody” — and that is impossible. Trying turns you into a liar.'});
+</script>

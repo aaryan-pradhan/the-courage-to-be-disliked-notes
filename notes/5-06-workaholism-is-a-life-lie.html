@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workaholism Is a Life-Lie</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.6', uses:['D26','D24','D38','T41'], new:['D43','T49','T50'],
+moves:[
+ {who:'Y', tag:'objection', say:'Is it all MY fault? Others accuse and attack me unreasonably!',
+  pic:G({o:[0,0,'Others attack','x'], m:[1.3,0,'My fault?','bad']}, [['o','m','?']])},
+ {who:'P', tag:'precision', say:'It’s THAT person who has the problem — not everyone. Beware words like “everyone”, “always”, “everything”.',
+  pic:tb(['Generalization', 'Precise version'], [['“Everyone hates me”','“this one person dislikes me”'],['“I always lose”','“I lost this time”'],['“Everything is wrong”','“this thing went wrong”']])},
+ {who:'P', tag:'ten people', say:'Of ten people: one will criticize you whatever you do, two will accept everything about you, seven are neither.',
+  pic:G({a:[0,0,'✗','bad',56], b:[0.3,0,'✓','act',56], c:[0.6,0,'✓','act',56], d:[0.9,0,'·','x',56], e:[1.2,0,'·','x',56],
+         f:[1.5,0,'·','x',56], g:[1.8,0,'·','x',56], h:[2.1,0,'·','x',56], i:[2.4,0,'·','x',56], j:[2.7,0,'·','x',56],
+         la:[0,0.75,'1 dislikes','lbl'], lb:[0.45,0.75,'2 love you','lbl'], lc:[1.8,0.75,'7 neutral','lbl']})},
+ {who:'P', tag:'proves', say:'Someone lacking harmony of life sees only the one, and judges the whole world from him: “everyone hates me”.',
+  f:'D43 · T49',
+  pic:G({o:[0,0,'1 of 10\ndislikes you','x'], a:[1.4,0,'“Everyone\nhates me”','bad']}, [['o','a','invalid jump','x']])},
+ {who:'P', tag:'example', say:'People who stammer often think “everyone laughs at me”. In my reading group, nobody laughs — they wait quietly.',
+  pic:G({s:[0,0,'Stammer','me'], o:[1.3,0,'At most 1 in 10\nmight laugh','x'], e:[2.6,0,'“Everyone\nlaughs”','bad']}, [['s','o'],['o','e','','x']])},
+ {who:'P', tag:'workaholic', say:'A workaholic lets one area of life dominate. “Too busy with work for family” is a life-lie — work as an excuse to skip other tasks.',
+  f:'T50',
+  pic:G({w:[0,0.5,'Company work','me'], f:[1.4,0,'Family','x'], r:[1.4,1,'Friends, hobbies,\ncommunity','x',170]}, [['w','f','excuse','x'],['w','r','excuse','x']])},
+ {who:'P', tag:'wider', say:'“Work” isn’t just a company job: housework, child-rearing, community, hobbies all count.',
+  pic:V({a:'company job', b:'work', mode:'subset', ka:'me', kb:'act', cap:'company job ⊂ work'})},
+ {who:'P', tag:'warning', say:'A man who values himself only by acts — earning, being recognized — is crushed when age or injury stops him working.',
+  f:'D38',
+  pic:G({a:[0,0,'Worth = acts','x'], r:[1.3,0,'Retire / injured','past'], c:[2.6,0,'Crushed','bad'], b:[0,1,'Worth = being','act'], s:[2.6,1,'Still worth','act']},
+        [['a','r'],['r','c'],['b','s']])},
+],
+proofs:{
+ T49:[
+  ['Typically one person in ten dislikes you; two love you; seven are neutral.','observation'],
+  ['“Everyone hates me” claims all ten dislike you.','definition'],
+  ['One case does not establish “all”.','logic'],
+  ['∴ “Everyone hates me” is a false generalization from a part to the whole.','1–3'],
+ ],
+ T50:[
+  ['Work, friendship and love are all life tasks.','D24'],
+  ['The workaholic uses “busy at work” to skip family and friendship.','observation'],
+  ['Making up pretexts to avoid life tasks is a life-lie.','D26'],
+  ['∴ Workaholism is a life-lie.','2, 3'],
+ ]},
+essence:[
+  ['Y','Others attack me unreasonably — is that my fault too?'],
+  ['P','That one person has the problem, not “everyone”. Of ten: 1 dislikes, 2 love, 7 neutral.'],
+  ['P','Judging the whole from one part lacks harmony of life (D43) — like “everyone laughs at my stammer”.'],
+  ['P','The workaholic lets one area stand for everything; “too busy” dodges other life tasks.'],
+  ['T','T49: “everyone hates me” is false. T50: workaholism is a life-lie. Accept yourself on the level of being.']],
+take:'One critic is not “everyone”; one area of life is not your whole life. See the whole — that’s harmony of life.'});
+</script>

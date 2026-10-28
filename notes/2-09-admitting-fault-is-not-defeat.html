@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admitting Fault Is Not Defeat</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.9', uses:['T5','T18','D21','D20','D16','D23'], new:['T19','T20'],
+moves:[
+ {who:'Y', tag:'question', say:'So when insulted to my face, I just grin and bear it?',
+  pic:G({i:[0,0,'Insult','x'], b:[1.3,0,'Grin and bear it?','me',170]}, [['i','b']])},
+ {who:'P', tag:'answer', say:'“Bearing it” means you’re still in the fight. Step down. Don’t answer action with reaction.',
+  pic:G({b:[0,0,'Bearing it','bad'], s:[0,1,'Stepping down','act'], f:[1.3,0,'still in the\nstruggle','bad'], o:[1.3,1,'out of the\nstruggle','act']},
+        [['b','f'],['s','o']])},
+ {who:'P', tag:'key idea', say:'Anger is a communication tool. But language works without anger. Short-tempered people just don’t know other tools.',
+  f:'anger ∈ tools(communicate);  language ∈ tools(communicate)',
+  pic:G({g:[0,0.5,'Goal: be\nunderstood','goal'], a:[1.3,0,'Anger','bad'], l:[1.3,1,'Language,\nlogic','act']}, [['g','a','one tool'],['g','l','better tool']])},
+ {who:'Y', tag:'objection', say:'What about false accusations and insults — I shouldn’t get angry even then?  P: It’s not that you mustn’t; there’s just no need to rely on the tool of anger.',
+  pic:tb(['', 'Adler says'], [['“You must never feel anger”','✗'],['“You don’t need the tool of anger”','✓']])},
+ {who:'P', tag:'trap', say:'The moment you think “I am right”, you’ve already entered a power struggle.',
+  f:'T19',
+  pic:G({r:[0,0,'“I am right”','me'], w:[1,0,'“You are wrong”','x'], s:[2,0,'Topic shifts to\n“who wins”','bad',160], p:[2,1,'Power struggle','bad']},
+        [['r','w'],['w','s'],['s','p']])},
+ {who:'P', tag:'separation', say:'Whether your claim is right has nothing to do with winning. If you’re right, the matter is closed — no need to make anyone submit.',
+  pic:tb(['Question', 'Belongs to'], [['Is the claim true?','logic'],['Who wins?','power struggle'],['Do they agree with me?','their task']])},
+ {who:'P', tag:'proves', say:'Admitting a mistake, apologizing, stepping down — none of that is defeat.',
+  f:'T20',
+  pic:G({a:[0,0,'Admit mistake','me'], d:[1.3,0,'Defeat','bad'], c:[1.3,1,'Correct course','act']}, [['a','d','','x'],['a','c']])},
+ {who:'P', tag:'payoff', say:'Hung up on winning, you can’t admit mistakes and you take the wrong road. Remove the win/lose lens, and you can correct yourself.',
+  pic:G({l:[0,0,'Win/lose lens','bad'], w:[1.3,0,'Wrong path','bad'], n:[0,1,'No lens','act'], c:[1.3,1,'Self-correction','act']},
+        [['l','w'],['n','c']])},
+],
+proofs:{
+ T19:[
+  ['“I am right” implies “the other person is wrong”.','logic'],
+  ['The talk now turns from “is the claim true?” to “who is right between us?” — a question about the relationship.','1'],
+  ['Settling “who is right between us” means one side must give in.','2'],
+  ['A contest to make the other give in is a power struggle.','D23'],
+  ['∴ Insisting “I am right” turns a discussion into a power struggle.','3, 4'],
+ ],
+ T20:[
+  ['Defeat exists only inside a competition.','D21'],
+  ['The pursuit of superiority is not a competition with others: it happens on a flat plane.','D16, D20'],
+  ['Admitting a mistake is a step in your own improvement, not a move in a contest.','2'],
+  ['∴ Admitting a mistake is not a defeat.','1, 3'],
+ ]},
+essence:[
+  ['Y','So I just grin and bear insults?'],
+  ['P','“Bearing it” is still fighting. Step down; don’t answer action with reaction.'],
+  ['P','Anger is one communication tool; language and logic work better.'],
+  ['P','“I am right” turns any discussion into who-wins (T19).'],
+  ['T','T20: admitting a mistake is not a defeat — defeat exists only inside competition.']],
+take:'Being right and winning are different things. Admitting a mistake is a step forward, not a loss.'});
+</script>

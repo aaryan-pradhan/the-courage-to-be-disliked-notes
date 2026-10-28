@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Young People Walk Ahead</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.5', uses:['D42','D21','D22','D24','T7'], new:['T48'],
+moves:[
+ {who:'Y', tag:'objection', say:'“Officially for others, really for yourself” — still hypocrisy. Explain!',
+  pic:G({h:[0,0,'Hypocrisy?','bad']})},
+ {who:'P', tag:'scene', say:'After dinner, the family leaves the dishes to “me”. Grumble — “why only me?” — and everyone keeps away. Hum while washing — and the kids may come help.',
+  pic:G({d:[0,0.5,'Dishes left\nfor me','x'], g:[1.3,0,'Grumble:\n“why only me?”','bad'], h:[1.3,1,'Hum: “I’m of\nuse to them”','act'],
+         a:[2.6,0,'Family keeps\naway','bad'], b:[2.6,1,'Kids may\nhelp','act']}, [['d','g'],['d','h'],['g','a'],['h','b']])},
+ {who:'P', tag:'proves', say:'Why can I feel contribution there? Because my family are comrades. Contribution made while seeing others as enemies becomes hypocrisy.',
+  f:'T48',
+  pic:tb(['Others seen as', 'Inner voice', 'Hypocrisy?'], [['Enemies','“why only me?”','✓'],['Comrades','“glad to help”','✗']])},
+ {who:'P', tag:'circle', say:'The three keys form a circle, each feeding the next.',
+  pic:G({s:[0,0,'Self-\nacceptance','me'], c:[2,0,'Confidence\nin others','me'], k:[1,1.3,'Contribution\nto others','act']},
+        [['s','c','no fear of\nbeing used'],['c','k','comrades'],['k','s','“I am of use”']])},
+ {who:'P', tag:'map', say:'Lay it over the objectives from Night 2.',
+  pic:tb(['Objective (§2.10)', 'Key'], [['Be self-reliant · “I have ability”','self-acceptance'],['Harmony with society · “people are comrades”','confidence + contribution']])},
+ {who:'P', tag:'time', say:'It’s said that truly living Adler takes half the years you’ve lived. Start at 40 → 60. Start at 20 → 30.',
+  pic:plot({pts:[['start 20',0.3],['start 40',0.6],['start 60',0.9]], y:'years to\nlearn', hi:'#5aa9ff'})},
+ {who:'P', tag:'praise-free', say:'So you are walking ahead of the adults — even ahead of me. On the same flat ground.',
+  pic:G({p:[0,0,'Philosopher','me'], y:[1.3,0,'Youth (ahead)','act']}, [['p','y','same ground']])},
+],
+proofs:{T48:[
+ ['Hypocrisy here = helping outwardly while resenting it inwardly (“why only me?”).','definition'],
+ ['Resentment means their gain feels like your loss — that is competition.','D21'],
+ ['Among comrades, their gain is not your loss.','D22'],
+ ['∴ Among comrades there is no resentment, so contribution is not hypocrisy. It becomes hypocrisy only when others are enemies.','1–3'],
+]},
+essence:[
+  ['Y','Officially for others, really for me — still hypocrisy.'],
+  ['P','Washing dishes: grumbling sees family as enemies; humming sees comrades.'],
+  ['P','Helping becomes hypocrisy only when others are enemies (T48).'],
+  ['P','Self-acceptance → confidence → contribution → self-acceptance: one circle, matching the objectives of §2.10.'],
+  ['T','Learning this takes half the years you’ve lived — so the young walk ahead.']],
+take:'Help given to comrades is not hypocrisy. Self-acceptance → confidence → contribution → self-acceptance: one circle.'});
+</script>

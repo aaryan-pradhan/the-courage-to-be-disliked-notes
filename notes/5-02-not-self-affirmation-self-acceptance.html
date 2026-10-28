@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Not Self-Affirmation — Self-Acceptance</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.2', uses:['A9','D9','A5','T7','D19','D30','T10'], new:['D39','D40','T44'],
+moves:[
+ {who:'P', tag:'goal-reading', say:'What do you gain by braking your natural self? Not being laughed at. And alone at home — you sing and dance freely, right?',
+  f:'A9: effect = never laughed at',
+  pic:G({a:[0,0,'Alone: sing,\ndance, free','act'], o:[0,1,'With others:\nfreeze','bad'], i:[1.4,0.5,'So: an issue of\nrelationships','goal']}, [['a','i'],['o','i']])},
+ {who:'P', tag:'three keys', say:'To switch from attachment to self to concern for others, you need three things.',
+  pic:G({a:[0,0,'1. Self-\nacceptance','me'], b:[1,0,'2. Confidence\nin others','me'], c:[2,0,'3. Contribution\nto others','me']})},
+ {who:'P', tag:'recall', say:'Remember: not what you were born with, but what you do with that equipment. You can’t replace the “I” — only change how you use it.',
+  f:'D9, T7',
+  pic:G({e:[0,0,'Equipment\n(keep)','past'], u:[1.3,0,'Use\n(change)','me']}, [['e','u']])},
+ {who:'P', tag:'definition', say:'Not self-affirmation — self-acceptance. You score 60. Affirmation: “unlucky; the real me is 100.” Acceptance: “I’m 60 — how do I get closer to 100?”',
+  f:'D39',
+  pic:tb(['', 'Self-affirmation', 'Self-acceptance'], [['Says','“Real me = 100”','“I’m 60 now”'],['Truthful?','✗ lie to self','✓'],['Leads to','superiority complex (D19)','next step to 100']])},
+ {who:'P', tag:'fact', say:'Nobody is 100%. Everyone is in the condition of wanting to improve.',
+  pic:plot({pts:[['you',0.6],['anyone',0.7],['ideal',1]], y:'score', hi:'#5aa9ff'})},
+ {who:'P', tag:'definition', say:'Affirmative resignation: separate what you can change from what you can’t. Focus only on what you can change.',
+  f:'D40',
+  pic:G({a:[0,0.5,'Everything about\nyou','x',160], c:[1.4,0,'Can’t change:\naccept','past'], d:[1.4,1,'Can change:\ncourage','act']}, [['a','c'],['a','d']])},
+ {who:'Y', tag:'echo', say:'The Serenity Prayer! “Serenity to accept what I cannot change, courage to change what I can, wisdom to know the difference.”',
+  pic:tb(['Part of the prayer', 'Adler’s word'], [['Accept what I can’t change','self-acceptance'],['Courage to change what I can','courage (D12)'],['Wisdom to know the difference','affirmative resignation (D40)']])},
+],
+proofs:{T44:[
+ ['Some things about you can’t be changed (your equipment).','A5'],
+ ['Others can: how you use that equipment.','T7'],
+ ['Effort on something that can’t change produces no change.','logic'],
+ ['∴ Effort belongs only on what can change — that is affirmative resignation.','1–3, D40'],
+]},
+essence:[
+  ['P','You brake your natural self to avoid being laughed at — alone, you’re free.'],
+  ['P','Three keys: self-acceptance, confidence in others, contribution to others.'],
+  ['P','Self-acceptance ≠ self-affirmation: “I’m 60, how do I approach 100?” (D39)'],
+  ['P','Affirmative resignation (D40): accept what can’t change; courage for what can.'],
+  ['T','T44: effort belongs only where change is possible — the Serenity Prayer.']],
+take:'Accept your 60 honestly, then walk toward 100. Accept what can’t change; spend courage on what can.'});
+</script>

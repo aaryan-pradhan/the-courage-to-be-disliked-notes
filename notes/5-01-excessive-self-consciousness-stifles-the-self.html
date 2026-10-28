@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Self-Consciousness Stifles the Self</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.1', uses:['D34','D35','A9','T12'],
+moves:[
+ {who:'Y', tag:'complaint', say:'Community feeling is brilliant — but “the universe, past and future” sounds like a religion.',
+  pic:G({c:[0,0,'Community\nfeeling ✓','act'], u:[1.4,0,'“The universe”?\nreligion?','bad']}, [['c','u','but']])},
+ {who:'Y', tag:'proposal', say:'The order is wrong. First grasp the “I”, then “you and I”, then the larger community.',
+  pic:G({i:[0,0,'“I”','me'], y:[1,0,'“You and I”','me'], l:[2,0,'Larger\ncommunity','goal']}, [['i','y','then'],['y','l','then']])},
+ {who:'P', tag:'agree', say:'That is a good order.',
+  pic:G({o:[0,0,'Good order ✓','act']})},
+ {who:'Y', tag:'problem', say:'I’m not a narcissist — I hate myself, so I watch myself constantly. In meetings I freeze: “they’ll laugh at me.”',
+  pic:G({h:[0,0,'Hate myself','bad'], w:[1,0,'Watch myself\nconstantly','me'], f:[2,0,'Freeze in\nmeetings','bad']}, [['h','w'],['w','f']])},
+ {who:'Y', tag:'pre-empt', say:'And don’t just say “have courage.” That’s useless.',
+  pic:G({c:[0,0,'“Have courage!”','x'], u:[1.4,0,'Useless advice?','bad']}, [['c','u']])},
+ {who:'P', tag:'plan', say:'Tonight we go deeper into community feeling — and will probably arrive at the question: what is happiness?',
+  pic:G({c:[0,0,'Community\nfeeling','me'], h:[1.4,0,'Happiness = ?','goal']}, [['c','h','leads to']])},
+],
+essence:[
+  ['Y','Community feeling sounds religious; start from the “I”, then “you and I”, then larger.'],
+  ['Y','I hate myself, so I watch myself constantly and freeze in meetings — and “courage” won’t fix it.'],
+  ['T','Tonight: go deeper into community feeling, and reach the question “what is happiness?”']],
+take:'Start with the “I”, then “you and I”, then the wider world. The real question waiting at the end: what is happiness?'});
+</script>

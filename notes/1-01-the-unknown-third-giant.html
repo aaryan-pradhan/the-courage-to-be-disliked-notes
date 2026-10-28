@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Unknown Third Giant</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.1', new:['D3'],
+moves:[
+ {who:'P', tag:'answer', say:'The “other philosophy” is Adlerian psychology. It sits in line with Greek philosophy.',
+  f:'Greek philosophy ∥ Adlerian psychology',
+  pic:G({g:[0,0,'Greek philosophy\nSocrates · Plato','x',170], a:[1.4,0,'Adlerian\npsychology','me',170]}, [['g','a','in line with','n']])},
+ {who:'P', tag:'fact', say:'Three giants: Freud, Jung, Adler. Jung revered Freud like a father. Adler was Freud’s equal, then split off and founded “individual psychology”.',
+  f:'Adler ≠ disciple(Freud)   ·   Adler → individual psychology (D3)',
+  pic:G({f:[1,0,'Freud','x'], j:[0,1,'Jung','x'], a:[2,1,'Adler','me'], i:[2,2,'Individual\npsychology','me']},
+        [['j','f','father figure'],['a','f','equals → split','-n'],['a','i','founds']])},
+ {who:'P', tag:'quote', say:'Adler: “A time might come when no one remembers my name.” He didn’t mind — it would mean his ideas had become everyone’s common sense.',
+  pic:G({n:[0,0,'Name forgotten','x'], c:[1.4,0,'Ideas = common\nsense (good)','act']}, [['n','c','because']])},
+ {who:'P', tag:'fact', say:'Carnegie and Covey borrowed heavily from Adler. His ideas spread until they felt like common sense.',
+  f:'Adler → {Carnegie, Covey} → common sense',
+  pic:G({a:[0,0.5,'Adler','me'], c:[1,0,'Carnegie','x'], v:[1,1,'Covey','x'], s:[2,0.5,'“common sense”','act']},
+        [['a','c'],['a','v'],['c','s'],['v','s']])},
+ {who:'P', tag:'stance', say:'“Am I a philosopher or a psychologist? A philosopher. Adler’s psychology is philosophy.”',
+  pic:G({p:[0,0,'The Philosopher','x'], a:[1.3,0,'lives Adler’s ideas\nas philosophy','me',180]}, [['p','a']])},
+ {who:'P', tag:'claim', say:'Adler’s ideas are said to be a hundred years ahead of their time — we still haven’t fully understood them.',
+  pic:G({a:[0,0,'Adler (1910s)','me'], t:[1.4,0,'Still ahead\nof us today','goal']}, [['a','t','100 years']])},
+],
+essence:[
+  ['Y','You study Greek philosophy — what is this “other philosophy”?'],
+  ['P','Adlerian psychology: in line with Greek philosophy, and itself a philosophy.'],
+  ['P','Adler was Freud’s equal, not his disciple; he split off and founded individual psychology (D3).'],
+  ['T','Adler is the forgotten third giant — forgotten because his ideas became common sense.']],
+take:'Adler: the forgotten third giant. Freud’s equal, not his disciple. Founder of individual psychology.'});
+</script>

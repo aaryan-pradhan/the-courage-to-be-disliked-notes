@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do Not Rebuke or Praise</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.6', uses:['D20','A14','D28','A9','D15','D19'], new:['T37','T38'],
+moves:[
+ {who:'Y', tag:'question', say:'Fine — but how do I get from separation of tasks to community feeling? Concretely!',
+  pic:G({s:[0,0,'Separation\nof tasks','me'], c:[2,0,'Community\nfeeling','goal'], q:[1,0,'?','x']}, [['s','q'],['q','c']])},
+ {who:'P', tag:'question', say:'Child-rearing: rebuke or praise — which is better?  Youth: “Praise, obviously. Like training animals with treats instead of a whip.”',
+  pic:G({w:[0,0,'Whip (rebuke)','bad'], t:[0,1,'Treat (praise)','act'], a:[1.3,0.5,'Animal learns\nthe trick','x']}, [['w','a'],['t','a']])},
+ {who:'P', tag:'claim', say:'Adler: neither. No punishment, no rebuke — and no praise.',
+  pic:tb(['Method', 'Allowed?'], [['Physical punishment','✗'],['Rebuke','✗'],['Praise','✗']])},
+ {who:'P', tag:'test', say:'If I told you “Good job!” for what you just said — how would it feel?  Youth: “Like being talked down to.”',
+  pic:G({p:[0,0,'“Good job!”','x'], d:[1.3,0,'Talked down to','bad']}, [['p','d','feels like']])},
+ {who:'P', tag:'evidence', say:'A mother tells her child “What a good helper!” — but never says it to her husband who does the same thing. Praise only flows downward.',
+  f:'praise(x→y) ⇒ y below x   ⇒ vertical (D20)',
+  pic:G({m:[0.5,0,'Mother','x'], c:[0,1,'Child','me'], h:[1,1,'Husband','me']}, [['m','c','“good helper!”'],['m','h','—','x']])},
+ {who:'P', tag:'proves', say:'Praise is judgment by the able on the less able. Its goal is to manipulate. Carrot or stick — same goal.',
+  f:'T37',
+  pic:G({c:[0,0,'Carrot\n(praise)','me'], s:[0,1,'Stick\n(rebuke)','me'], m:[1.4,0.5,'Goal: steer\nthe other','bad']}, [['c','m'],['s','m']])},
+ {who:'Y', tag:'objection', say:'Wrong! For a child, parents’ praise is the greatest joy — I studied and behaved to get it. Even as adults, a boss’s praise feels good. That’s instinct!',
+  pic:G({c:[0,0,'Child wants\npraise','me'], j:[1.4,0,'Joy, motivation','act']}, [['c','j','instinct?']])},
+ {who:'P', tag:'principle', say:'Wanting praise, or giving it, shows you see relationships as vertical. Adler: make ALL relationships horizontal.',
+  pic:G({v:[0,0,'Vertical:\njudge ↓ judged','bad'], h:[1.4,0,'Horizontal:\nequal, not same','act']}, [['v','h','switch']])},
+ {who:'P', tag:'example', say:'“I bring in the money, so be quiet” — a husband using economic rank. Different roles, equal worth. He has hidden inferiority.',
+  pic:tb(['', 'Husband (job)', 'Wife (home)'], [['Workplace','office','home'],['Role','different','different'],['Worth','equal','equal']])},
+ {who:'Y', tag:'concedes', say:'Hmm… flattering my boss to get on his good side — that IS manipulation. And I’ve been manipulated by praise myself.',
+  pic:G({f:[0,0,'Flatter boss','me'], m:[1.3,0,'Manipulation','bad'], p:[0,1,'Praised by\nothers','x'], y:[1.3,1,'Manipulated','bad']}, [['f','m'],['p','y']])},
+ {who:'P', tag:'proves', say:'Inferiority arises only in vertical relationships. Make them horizontal and there’s no room for inferiority complexes.',
+  f:'T38',
+  pic:G({v:[0,0,'Vertical axis','x'], b:[1.3,0,'“below” exists','bad'], i:[2.6,0,'Inferiority\npossible','bad'],
+         h:[0,1,'No vertical\naxis','act'], n:[1.3,1,'no “below”','act'], z:[2.6,1,'No room for\ninferiority','act']},
+        [['v','b'],['b','i'],['h','n'],['n','z']])},
+],
+proofs:{
+ T37:[
+  ['Praise is given downward only (child, not husband): it is judgment by a superior.','observation'],
+  ['A relationship with a superior and inferior is vertical.','D20'],
+  ['The predictable effect of praise and rebuke is to steer the other’s behavior.','observation'],
+  ['That effect is their goal.','A9'],
+  ['∴ Praise and rebuke both come from vertical relationships and aim to manipulate.','1–4'],
+ ],
+ T38:[
+  ['A feeling of inferiority is judging yourself worth less — “below”.','D15'],
+  ['“Below” only exists if there is a vertical axis.','D20'],
+  ['∴ Inferiority feelings can only arise in vertical relationships; horizontal ones leave no room for them.','1, 2'],
+ ]},
+essence:[
+  ['Y','How do we get from separation of tasks to community feeling?'],
+  ['P','Through horizontal relationships. Neither rebuke nor praise.'],
+  ['P','Praise only flows downward (child, never husband): judgment from above, aimed at steering (T37).'],
+  ['Y','Children crave praise — it’s instinct!'],
+  ['P','Wanting praise shows you see relationships as vertical. Inferiority lives only on a vertical axis (T38).'],
+  ['T','Make every relationship horizontal: equal, not the same.']],
+take:'Praise and rebuke are carrot and stick: judgment from above. Make relationships horizontal and inferiority has nowhere to live.'});
+</script>

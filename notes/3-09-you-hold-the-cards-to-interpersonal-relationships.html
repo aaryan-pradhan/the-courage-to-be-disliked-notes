@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You Hold the Cards</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.9', uses:['A2','A9','D29','T3','A8'], new:['T32'],
+moves:[
+ {who:'P', tag:'story', say:'My father hit me as a child. I remember hiding under a desk. Our relationship stayed bad for decades.',
+  pic:G({h:[0,0,'Hit as a child','past'], b:[1.4,0,'Bad relationship','bad']}, [['h','b','?']])},
+ {who:'P', tag:'flip', say:'Etiology: “He hit me, so we don’t get along.” Adler: “I bring out that memory BECAUSE I don’t want to get along.”',
+  pic:G({l1:[-0.75,0,'Etiology','lbl'], h:[0,0,'He hit me','past'], b:[1,0,'Bad relation','bad'],
+         l2:[-0.75,1,'Teleology','lbl'], g:[0,1,'Goal: don’t\nrepair','goal'], m:[1,1,'Recall the\nhitting','me'], b2:[2,1,'Bad relation','bad']},
+        [['h','b'],['g','m'],['m','b2']])},
+ {who:'P', tag:'why', say:'A bad father was a handy excuse for my own troubles — and a form of revenge.',
+  f:'A9: effect = excuse + revenge',
+  pic:G({b:[0,0,'Bad relation','me'], e:[1.3,0,'Excuse for my\nlife','goal'], r:[1.3,1,'Revenge on\nfather','goal']}, [['b','e'],['b','r']])},
+ {who:'Y', tag:'objection', say:'Even reversed, it doesn’t change the fact that you were hit!',
+  pic:G({f:[0,0,'Fact: hit\n(fixed)','past']})},
+ {who:'P', tag:'proves', say:'It changes who holds the card. In etiology, the past holds it — nothing to do. In teleology, my goal holds it — change the goal, repair the relationship.',
+  f:'T32',
+  pic:tb(['View', 'Who holds the card?', 'Can you act?'], [['Etiology','the past','✗'],['Teleology','your goal','✓']])},
+ {who:'P', tag:'separation', say:'When I decided to repair things, what HE thought or did didn’t matter. My resolve was my task; his response was his.',
+  pic:G({r:[0,0,'My resolve\nto repair','me'], h:[1.4,0,'His response','x']}, [['r','h','mine | his','-n']])},
+ {who:'P', tag:'warning', say:'I didn’t change to change him. Changing yourself to manipulate others is a mistake. Sometimes they change alongside — not BECAUSE of you.',
+  pic:G({m:[0,0,'I change','me'], h:[1.3,0,'He changes','x']}, [['m','h','manipulate?','x']])},
+ {who:'P', tag:'ending', say:'Years later, caring for him in illness, he said: “Thank you.” I led him to water; in the end, he drank.',
+  pic:G({l:[0,0,'Lead to water','me'], d:[1.3,0,'He drank:\n“Thank you”','act']}, [['l','d','his choice','-']])},
+],
+proofs:{T32:[
+ ['Your behavior toward the relationship serves your goal.','A2'],
+ ['Your goal is chosen by you, at every moment.','A8'],
+ ['The past event (being hit) does not by itself determine the relationship.','T3'],
+ ['How the other person responds is their task.','D29'],
+ ['∴ Repair depends on your goal, which you hold; their response is theirs.','1–4'],
+]},
+essence:[
+  ['P','“He hit me, so we don’t get along” is etiology; “I recall it because I don’t want to get along” is teleology.'],
+  ['Y','The hitting still happened!'],
+  ['P','But now the card is in your hand: change the goal and repair is possible.'],
+  ['P','His response is his task; changing yourself in order to manipulate him is a mistake.'],
+  ['T','T32: you hold the cards to your relationships. (His “thank you” came — he drank the water.)']],
+take:'Most people think the other person holds the cards. With separation of tasks, you see you’re holding all of yours.'});
+</script>

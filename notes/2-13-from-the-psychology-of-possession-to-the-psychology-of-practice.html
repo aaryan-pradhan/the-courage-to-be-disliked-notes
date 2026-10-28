@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Possession to Practice</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.13', uses:['D9','T7','D6','D12','A8'],
+moves:[
+ {who:'P', tag:'claim', say:'Adler’s is not a psychology of possession but a psychology of use.',
+  f:'= D9: not what you have, but what you do with it',
+  pic:G({p:[0,0,'Possession:\nwhat you have','past'], u:[1.4,0,'Use:\nwhat you do with it','me',170]}, [['p','u','shift focus']])},
+ {who:'P', tag:'compare', say:'Freud’s etiology is a psychology of possession and ends in determinism. Adler’s is a psychology of use — and you decide.',
+  pic:tb(['', 'Freud', 'Adler'], [['Psychology of','possession','use'],['Explains by','past causes','present goals'],['Ends in','determinism (D6)','your choice (A8)'],['Also a psychology of','—','courage (D12)']])},
+ {who:'P', tag:'claim', say:'We aren’t so fragile as to be at the mercy of trauma. We choose our lives and lifestyles. We have that power.',
+  pic:G({t:[0,0,'Trauma','past'], y:[1.3,0,'You choose','me']}, [['t','y','at its\nmercy?','x']])},
+ {who:'Y', tag:'concedes + asks', say:'Fine: I lack courage, I fear people, I use excuses. But “have courage!” is just a slap on the shoulder. I can’t refill courage like fuel. Give me steps.',
+  pic:G({a:[0,0,'Admits: lacks\ncourage','me'], s:[1.3,0,'Needs concrete\nsteps','goal']}, [['a','s']])},
+ {who:'P', tag:'next', say:'Next time: freedom. You can’t talk about courage without it.',
+  pic:G({c:[0,0,'Courage','goal'], f:[1.3,0,'Freedom\n(Night 3)','act']}, [['c','f','needs']])},
+],
+essence:[
+  ['P','Adler’s is a psychology of use: what you do with your equipment.'],
+  ['P','Freud’s is a psychology of possession: causes ⇒ determinism.'],
+  ['Y','I admit I lack courage — but I can’t refill it like fuel. Give me steps.'],
+  ['T','Psychology of use + psychology of courage. The next step requires understanding freedom (Night 3).']],
+take:'Adler = psychology of use and of courage. What you have matters less than what you do with it. Next: freedom.'});
+</script>

@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>People Always Choose Not to Change</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.9', uses:['A4','A6','A7'], new:['D11','A8','D12','T9','T10'],
+moves:[
+ {who:'P', tag:'definition', say:'Adler’s word for personality is “lifestyle”: how you see the world, and how you see yourself.',
+  f:'lifestyle = view(world) + view(self)   (D11)',
+  pic:G({w:[0,0,'View of\nthe world','me'], s:[0,1,'View of\nyourself','me'], l:[1.3,0.5,'Lifestyle','act']}, [['w','l'],['s','l']])},
+ {who:'P', tag:'reframe', say:'“I am a pessimist” → “I have a pessimistic view of the world.” A view can be changed.',
+  pic:G({p:[0,0,'Personality\n(sounds fixed)','past'], v:[1.4,0,'View of the world\n(changeable)','me',170]}, [['p','v','rename']])},
+ {who:'Y', tag:'objection', say:'I never chose my personality!',
+  pic:G({y:[0,0,'“I never chose it”','bad',180]})},
+ {who:'P', tag:'answer', say:'Not consciously. You chose it around age 10 — strongly influenced by birth, culture and family. Still your choice.',
+  f:'influences ⇢ choice(≈ age 10) ⇒ lifestyle',
+  pic:G({i:[0,0,'Birth · culture\n· family','past'], c:[1,0,'Choice\n≈ age 10','me'], l:[2,0,'Lifestyle','act']},
+        [['i','c','influence','-'],['c','l']])},
+ {who:'P', tag:'responsibility', say:'Nobody chooses their birth, era or parents, and those influence you greatly. But now you know about lifestyle. What you do from here is your responsibility.',
+  pic:G({b:[0,0,'Birth, era,\nparents','past'], n:[1.4,0,'From now on:\nyour call','me']}, [['b','n','influence','-']])},
+ {who:'P', tag:'key idea', say:'If you chose it, you can choose again. In fact you re-choose it every moment — including right now.',
+  f:'∀ moment t: lifestyle(t) = choice(t)   (A8)',
+  pic:G({a:[0,0,'yesterday:\nkeep','me'], b:[1,0,'this morning:\nkeep','me'], c:[2,0,'now:\n?','goal']}, [['a','b'],['b','c']])},
+ {who:'Y', tag:'objection', say:'But I WANT to change. How can I be deciding not to?',
+  pic:G({w:[0,0,'Wants to change','me'], n:[1.3,0,'Doesn’t change','bad']}, [['w','n','?']])},
+ {who:'P', tag:'answer', say:'Your lifestyle is an old car: it rattles, but you know how it drives. A new one is an unknown road.',
+  f:'keep: known dissatisfaction      new: unknown ⇒ anxiety',
+  pic:G({c:[0,0.5,'Choice now','me'], k:[1.3,0,'Keep old car\nknown, rattles','past',170], n:[1.3,1,'New car\nunknown road','goal',170]},
+        [['c','k','safe'],['c','n','scary']])},
+ {who:'P', tag:'proves', say:'You pick disappointment over anxiety. What’s missing is courage, not ability.',
+  f:'ability ✓ (A4),  courage ✗  ⇒  no change   (T10)',
+  pic:tb(['Needed to change', 'You have it?'], [['Ability','✓ (A4)'],['Courage','✗']])},
+],
+proofs:{
+ T9:[
+  ['Lifestyle is re-chosen at every moment.','A8'],
+  ['You have not changed.','given'],
+  ['So at every moment, you chose “keep”.','1, 2'],
+  ['∴ Not changing = repeatedly choosing not to change.','3'],
+ ],
+ T10:[
+  ['Keeping your lifestyle is a choice.','T9'],
+  ['The ability to choose a new one exists.','A4'],
+  ['Old option: known dissatisfaction. New option: unknown, so anxiety.','the old-car picture'],
+  ['You choose what you judge better; you judge the known pain better than the unknown.','A6'],
+  ['Choosing despite that anxiety is exactly what courage means.','D12'],
+  ['∴ What blocks change is too little courage, not too little ability.','1–5'],
+ ]},
+essence:[
+  ['P','Personality = lifestyle: your view of the world and of yourself (D11) — and views can change.'],
+  ['Y','I never chose my personality!'],
+  ['P','You chose it unconsciously around age 10, and you re-choose it every moment (A8).'],
+  ['Y','But I want to change — how am I choosing not to?'],
+  ['P','The old lifestyle is a familiar car; a new one means anxiety. You keep picking the known.'],
+  ['T','T9: not changing is a choice. T10: what is missing is courage, not ability.']],
+take:'Not changing is a choice you renew every moment: the known bad over the unknown. The missing piece is courage.'});
+</script>

@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Not Controlled by the Past</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.5', uses:['D1','A3','D6','T5'], new:['A4','T6'],
+moves:[
+ {who:'Y', tag:'objection', say:'You call emotions tools. That denies what makes us human — it’s nihilism!',
+  f:'emotions = tools  ⇒  humans = machines ?',
+  pic:G({t:[0,0,'Emotions\nare tools (T5)','me'], m:[1.3,0,'Humans are\nmachines?','bad']}, [['t','m','?']])},
+ {who:'P', tag:'answer', say:'Emotions exist. Everyone has them. We’re just not controlled by them — or by the past.',
+  f:'exists ∧ ¬controls',
+  pic:tb(['', 'Exists?', 'Controls you?'], [['Emotion','✓','✗'],['Past','✓','✗']])},
+ {who:'P', tag:'example', say:'Parents’ divorce is a fixed fact, like 60°F water. Whether it feels “cold” or “warm” is decided now, by you.',
+  f:'event fixed (D1);  meaning given now (A3)',
+  pic:G({d:[0,0.5,'Divorce\n(fixed fact)','past'], c:[1.3,0,'meaning now:\n“cold”','me'], w:[1.3,1,'meaning now:\n“warm”','me']},
+        [['d','c'],['d','w']])},
+ {who:'Y', tag:'summary', say:'So the question isn’t “what happened?” but “how was it resolved?”  — P: Exactly.',
+  pic:tb(['Question', 'Etiology asks', 'Adler asks'], [['About the past','what happened?','what meaning do I give it now?']])},
+ {who:'Y', tag:'objection', say:'But we can’t change the past. That’s exactly why life is so hard.',
+  pic:G({p:[0,0,'Past','past'], c:[1.3,0,'can’t change it','bad']}, [['p','c','','n']])},
+ {who:'P', tag:'chain', say:'If the past decides everything AND can’t change, you can never take a step forward. That road ends in giving up.',
+  f:'(past ⇒ present) ∧ past fixed  ⇒  present fixed  ⇒  hopelessness',
+  pic:G({a:[0,0,'Past decides\neverything','past'], b:[0,1,'Past can’t\nchange','past'], c:[1.2,0.5,'Present can’t\nchange','bad'],
+         d:[2.3,0.5,'Give up\n(nihilism)','bad']}, [['a','c'],['b','c'],['c','d']])},
+ {who:'P', tag:'proves', say:'Accept that people can change, and strict etiology collapses. Teleology is what is left.',
+  f:'A4  ⇒  ¬(strict etiology)   (T6)',
+  pic:G({a:[0,0,'People can\nchange (A4)','goal'], e:[1.2,0,'Strict\netiology','bad'], t:[2.4,0,'Teleology','act']},
+        [['a','e','kills','x'],['e','t','leaves']])},
+ {who:'P', tag:'reversal', say:'And understand this: it is Freudian etiology that denies free will and treats humans like machines — not Adler.',
+  f:'machine = output fixed by input = strict etiology',
+  pic:tb(['View', 'Free will?', 'Humans are'], [['Etiology (Freud)','✗','machines: input → output'],['Teleology (Adler)','✓','choosers of goals']])},
+],
+proofs:{T6:[
+ ['Strict etiology: the present is fully fixed by the past.','D6'],
+ ['The past cannot be changed.','fact'],
+ ['So the present cannot be changed.','1, 2'],
+ ['People can change.','A4'],
+ ['3 and 4 contradict ⇒ strict etiology is false.','3, 4'],
+]},
+notes:{T6:'A4 is a premise the Philosopher chooses to adopt. Reject A4 and T6 falls with it.'},
+essence:[
+  ['Y','Calling emotions tools denies our humanity — it is nihilism.'],
+  ['P','Emotions exist; they just don’t control us. Neither does the past.'],
+  ['P','A divorce is a fixed fact; whether it is “cold” or “warm” is meaning given now.'],
+  ['P','If the past decided everything and can’t change, no step forward is possible — that is the real nihilism.'],
+  ['T','T6: adopt “people can change” (A4) and strict etiology is false. Etiology, not Adler, makes humans machines.']],
+take:'The fact is fixed; the meaning is yours, given now. If you can change at all, the past can’t be what decides.'});
+</script>

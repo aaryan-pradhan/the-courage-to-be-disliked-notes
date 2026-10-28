@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Life Is a Series of Moments</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.10', uses:['D4','D6','D46'], new:['D47','T54'],
+moves:[
+ {who:'P', tag:'image', say:'Your “lofty goals” picture life as climbing a mountain to the summit.',
+  pic:G({s:[0,1,'Start','x'], m:[1,0.5,'en route','x'], t:[2,0,'Summit','goal']}, [['s','m','climb'],['m','t','climb']])},
+ {who:'P', tag:'consequence', say:'Then most of life is “en route” — a tentative life by a tentative me. Real life starts only at the top.',
+  pic:G({t:[0,0,'Tentative life\n(99%)','x',165], r:[1.4,0,'“Real” life\nat summit','goal']}, [['t','r','waiting for']])},
+ {who:'P', tag:'problem', say:'And if an accident or illness stops you before the top? Your whole life was an interrupted “tentative life”.',
+  f:'T54',
+  pic:G({s:[0,1,'Start','x'], a:[1,0.5,'Accident','bad'], t:[2,0,'Summit\n(never reached)','x']}, [['s','a'],['a','t','','x']])},
+ {who:'Y', tag:'tough', say:'Then I lacked ability or luck. That’s reality, I accept it.',
+  pic:G({l:[0,0,'“Just deserts”','x']})},
+ {who:'P', tag:'diagnosis', say:'Seeing life as a line — a story from birth to summit — is Freudian etiology again. It turns most of life into “en route”.',
+  pic:G({b:[0,0,'Birth','past'], s:[1,0,'Story','x'], d:[2,0,'Death','past']}, [['b','s','line'],['s','d','line']])},
+ {who:'P', tag:'definition', say:'Look at a chalk line through a magnifying glass: it’s a row of dots. Life is a series of moments called “now”.',
+  f:'D47',
+  pic:G({a:[0,0,'now','me',70], b:[0.4,0,'now','me',70], c:[0.8,0,'now','me',70], d:[1.2,0,'now','me',70], e:[1.6,0,'now','me',70], f:[2,0,'now','me',70]})},
+ {who:'P', tag:'consequence', say:'If life were a line, life planning would be possible. Since it’s dots, a planned life isn’t necessary or unnecessary — it’s impossible.',
+  pic:tb(['Life as', 'Planning', 'Most of life is'], [['Line','possible','“en route”'],['Dots','impossible','already life']])},
+],
+proofs:{T54:[
+ ['If life is a climb to a summit, real life = being at the summit.','definition'],
+ ['Everything before the summit is then only “en route” — tentative.','1'],
+ ['Climbs can be cut short by accident or illness.','observation'],
+ ['∴ On the line view, most of life is tentative, and an unfinished climb makes the whole life a failure.','2, 3'],
+]},
+essence:[
+  ['P','Lofty goals picture life as climbing to a summit.'],
+  ['P','Then most of life is “en route”, and an unfinished climb is a failed life (T54).'],
+  ['P','That linear story is etiology again.'],
+  ['T','D47: life is a series of dots — moments called “now”. A planned life isn’t needed or unneeded; it’s impossible.']],
+take:'Life is not a line toward a summit. It’s a row of dots, each one “now” — and each one is already real life.'});
+</script>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Listen to a Larger Community</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.5', uses:['D34','A19','A14','D20','D32'], new:['T36'],
+moves:[
+ {who:'Y', tag:'objection', say:'The universe? Past and future? Inanimate objects? That’s sophistry!',
+  pic:G({u:[0,0,'Belong to the\nuniverse?','bad']})},
+ {who:'P', tag:'example', say:'A man retires. Cut off from his company, without title, he becomes “nobody” and ages overnight. He only lost one small community.',
+  pic:G({c:[0,0,'Company','x'], m:[1.3,0,'Retired man:\n“nobody”','bad']}, [['c','m','cut off','x']])},
+ {who:'P', tag:'example', say:'Even a recluse who buys bread is connected: coin → baker → flour farmer → truck driver → oil country. Nobody is ever truly alone.',
+  pic:G({c:[0,0,'Coin','me'], b:[1,0,'Baker','x'], f:[2,0,'Flour, butter','x'], d:[2,1,'Driver','x'], o:[1,1,'Oil country','x']},
+        [['c','b'],['b','f'],['f','d'],['d','o']])},
+ {who:'Y', tag:'objection', say:'But the community you can SEE gives stronger belonging. I feel more “member of my company” than “member of Earth”.',
+  pic:tb(['Community', 'Feels close?'], [['Company','✓ strong'],['Earth','✗ abstract']])},
+ {who:'P', tag:'danger', say:'Exactly the danger. If school is everything, and you’re bullied there, you belong to nothing — and retreat into an even smaller world, your room.',
+  pic:G({s:[0,0,'School =\neverything','x'], b:[1,0,'Bullied','bad'], n:[2,0,'Belong\nnowhere','bad'], r:[2,1,'Shut in room','bad']}, [['s','b'],['b','n'],['n','r']])},
+ {who:'P', tag:'proves', say:'There’s always a larger community: school sits inside human society. Outside the teacup, the storm is a breeze.',
+  f:'T36',
+  pic:V({a:'school', b:'human society', mode:'subset', ka:'bad', kb:'act', cap:'lose the small circle, still inside the big one'})},
+ {who:'P', tag:'option', say:'No refuge at school? Find one outside its walls. Change schools, or leave — a community you can quit with a form can only hold you so much.',
+  pic:G({s:[0,0,'School','x'], o:[1.4,0,'Refuge outside\nits walls','act']}, [['s','o','step out']])},
+ {who:'P', tag:'principle', say:'When stuck: listen to the voice of the larger community. A teacher’s authority is local; as humans you’re equals. Object if it’s unreasonable.',
+  pic:G({l:[0,0,'School rule:\nteacher above','x'], h:[1.4,0,'Human society:\nequals (A14)','act']}, [['l','h','appeal to larger']])},
+ {who:'P', tag:'freedom', say:'A relationship that breaks because you object isn’t one you need. Living in fear of breakage is living for others.',
+  pic:G({o:[0,0,'You object','me'], b:[1.3,0,'Relationship\nbreaks?','x'], f:[2.6,0,'Then let it go','act']}, [['o','b'],['b','f']])},
+],
+proofs:{T36:[
+ ['Every person belongs to many communities at once: family, school, work, country, humanity, the world.','observation'],
+ ['These communities nest: each small one lies inside a larger one.','observation'],
+ ['Losing your place in a small one leaves you inside the larger ones.','1, 2'],
+ ['∴ Losing one small community never removes all belonging.','3'],
+]},
+essence:[
+  ['Y','The universe and the past are sophistry; the community I can see is stronger.'],
+  ['P','The retiree lost one small community; the bread coin shows we are tied to everyone.'],
+  ['P','If school is everything and fails you, you belong nowhere and retreat into your room.'],
+  ['P','Communities nest; a larger one always exists — a storm in a teacup.'],
+  ['T','T36 + principle: listen to the voice of the larger community; object when a small one is unreasonable.']],
+take:'When a small world fails you, step back to a larger one. Your school, office or family is never all there is.'});
+</script>

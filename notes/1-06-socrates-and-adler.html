@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Socrates and Adler</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.6', uses:['A4'],
+moves:[
+ {who:'Y', tag:'test', say:'My friend Y is bright, like a sunflower; everyone loves him. Can I become like him?',
+  pic:G({me:[0,0,'The Youth','me'], y:[1.3,0,'Y\n(sunflower)','goal']}, [['me','y','become?']])},
+ {who:'P', tag:'answer', say:'Right now? No. You don’t understand Adler yet. The first step to change is knowing.',
+  f:'change requires knowing first',
+  pic:G({k:[0,0,'Knowing','me'], c:[1.2,0,'Change','act']}, [['k','c','step 1']])},
+ {who:'P', tag:'method', say:'Answers handed to you are stopgaps. You have to reach them yourself.',
+  f:'own answer ⇒ change;   borrowed answer ⇏ change',
+  pic:G({o:[0,0,'Your own answer','me'], b:[0,1,'Borrowed answer','x'], c:[1.3,0.5,'Change','act']},
+        [['o','c'],['b','c','stopgap','x']])},
+ {who:'P', tag:'method', say:'Socrates wrote nothing; Adler talked in Vienna cafés. Both taught by dialogue — like tonight.',
+  pic:G({s:[0,0,'Socrates:\ndialogue','x'], a:[0,1,'Adler:\ndialogue','x'], t:[1.3,0.5,'This study,\ntonight','me']},
+        [['s','t'],['a','t']])},
+],
+essence:[
+  ['Y','Can I become like my bright friend Y?'],
+  ['P','Not now: the first step to change is knowing.'],
+  ['P','Answers handed over are stopgaps; you must reach them yourself — so we use dialogue, like Socrates and Adler.'],
+  ['T','Change starts with understanding you arrive at yourself.']],
+take:'Change starts with an understanding you reach yourself. That is why the book is a dialogue.'});
+</script>

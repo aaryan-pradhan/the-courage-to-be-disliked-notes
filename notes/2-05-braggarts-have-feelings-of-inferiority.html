@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Braggarts Have Feelings of Inferiority</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.5', uses:['D17','D15','A2','A9'], new:['A12','D19','A13','T15'],
+moves:[
+ {who:'P', tag:'flip side', say:'“I’m not educated, so I can’t succeed” secretly says: “If only I were educated, I’d be a great success.” The real me is superior.',
+  f:'“A ⇒ ¬B”  ≡  “¬A ⇒ B”  (the hidden boast)',
+  pic:G({a:[0,0,'“A, so I can’t B”','bad',170], b:[1.4,0,'“Without A,\nI’d be great”','goal',170]}, [['a','b','implies']])},
+ {who:'P', tag:'axiom', say:'No one can bear a feeling of inferiority for long. It gets compensated — one way or another.',
+  f:'A12: inferiority ⇒ compensation',
+  pic:G({f:[0,1,'Feeling of\ninferiority','me'], s:[1.3,0,'Strive & grow\n(healthy)','act'], c:[1.3,1,'Inferiority\ncomplex (excuse)','bad'],
+         u:[1.3,2,'Superiority\ncomplex (fake)','bad']}, [['f','s'],['f','c'],['f','u']])},
+ {who:'P', tag:'type 1', say:'Borrowed authority: showing off ties to powerful people, inflating your résumé, brand obsession, rings on every finger.',
+  f:'D19: look superior by linking “I” to authority',
+  pic:G({i:[0,0,'“I”','me'], a:[1.3,0,'Powerful person /\nbrand','x',170]}, [['i','a','borrowed\nshine','-']])},
+ {who:'P', tag:'warning', say:'People who live on borrowed power are living by other people’s values — living other people’s lives.',
+  pic:G({b:[0,0,'Borrowed\nauthority','me'], o:[1.3,0,'Others’ values\nrun your life','bad']}, [['b','o']])},
+ {who:'P', tag:'type 2', say:'Boasting. Adler: “The one who boasts does so only out of a feeling of inferiority.” Confident people don’t need to.',
+  f:'proving X to others ⇒ doubting X   (A13, hidden)  ⇒  T15',
+  pic:G({c:[0,0,'Confident','act'], n:[1.3,0,'no need\nto boast','x'], d:[0,1,'Doubts self','bad'], b:[1.3,1,'Boasts','me']},
+        [['c','n'],['d','b']])},
+ {who:'P', tag:'type 3', say:'Bragging about misfortune: “You don’t understand how I feel.” Now everyone handles you carefully — you’re special.',
+  f:'misfortune ⇒ special status ⇒ control over others',
+  pic:G({m:[0,0,'“Look how I\nsuffered”','me'], s:[1,0,'Others tiptoe','x'], c:[2,0,'Control,\nspecial status','goal']}, [['m','s'],['s','c']])},
+ {who:'P', tag:'control', say:'Sick, injured or heartbroken, some people use misfortune to make family and friends worry, restrict what they say, and so control them. Shut-ins often do this too.',
+  pic:G({m:[0,0,'Display\nmisfortune','me'], w:[1,0,'Others worry,\nwatch their words','x'], c:[2,0,'Control','goal']}, [['m','w'],['w','c']])},
+ {who:'P', tag:'nuance', say:'“You don’t understand how I feel” holds some truth — nobody fully understands another’s pain. But used to be special, it keeps you needing the misfortune.',
+  pic:G({t:[0,0,'Partly true','x'], u:[1.3,0,'Used as\na weapon','bad']}, [['t','u','but']])},
+ {who:'P', tag:'paradox', say:'Adler: “Who is strongest in our culture? The baby. It rules and cannot be dominated” — through weakness.',
+  pic:G({b:[0,0,'Baby\n(weakness)','me'], a:[1.3,0,'Adults obey','act']}, [['b','a','rules']])},
+ {who:'P', tag:'cost', say:'But if you use misfortune to be special, you will always need that misfortune.',
+  pic:G({m:[0,0,'Misfortune','bad'], s:[1.3,0,'“Special”','goal']}, [['m','s'],['s','m','needs']])},
+],
+proofs:{T15:[
+ ['Boasting is an attempt to prove your superiority to others.','D19'],
+ ['A person who tries to prove X to others doubts X themselves.','A13'],
+ ['So a boaster doubts their own worth — a feeling of inferiority.','1, 2, D15'],
+ ['∴ Boasting signals a strong feeling of inferiority.','3'],
+]},
+essence:[
+  ['P','“A, so I can’t B” hides a boast: “without A, I’d be great.”'],
+  ['P','No one bears inferiority for long; it gets compensated — by real striving, or by fakes (A12).'],
+  ['P','Fakes = superiority complex (D19): borrowed authority, boasting, bragging about misfortune.'],
+  ['P','Someone who must prove superiority doubts it (A13); weakness can even be used to control others.'],
+  ['T','T15: braggarts feel inferior. Inferiority and superiority complexes are next-door neighbors.']],
+take:'Inferiority and superiority complexes are neighbors: both are fake ways to escape a feeling of inferiority.'});
+</script>

@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All Problems Are Interpersonal</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.2', uses:['T12'], new:['D14','A10'],
+moves:[
+ {who:'Y', tag:'objection', say:'Live alone in the universe? I’d be horribly lonely!',
+  pic:G({a:[0,0,'Alone in\nthe universe','x'], l:[1.3,0,'Lonely?','bad']}, [['a','l','?']])},
+ {who:'P', tag:'definition', say:'Being alone isn’t loneliness. Loneliness is feeling shut out by people who ARE there. It needs others.',
+  f:'lonely ⇒ others exist   (D14)',
+  pic:G({o:[0,0,'Others exist','past'], e:[1,0,'Felt exclusion','me'], l:[2,0,'Loneliness','act'],
+         n:[0,1,'No one exists','past'], z:[1,1,'nothing to be\nexcluded from','x']}, [['o','e'],['e','l'],['n','z']])},
+ {who:'P', tag:'thought experiment', say:'Alone in the universe you wouldn’t need language, logic or common sense. But it’s impossible: even on a desert island you think of someone across the sea.',
+  pic:G({a:[0,0,'Truly alone','x'], n:[1.4,0,'no language, logic,\nloneliness','x',170], i:[0,1,'Desert island','past'], s:[1.4,1,'still think of\nsomeone','me']}, [['a','n'],['i','s']])},
+ {who:'P', tag:'axiom', say:'Adler: “All problems are interpersonal relationship problems.” Remove everyone else, and every problem disappears.',
+  f:'Problems ⊆ Interpersonal   (A10)',
+  pic:V({a:'your problems', b:'problems involving others', mode:'subset', ka:'bad', kb:'me', cap:'every problem sits inside “involves others”'})},
+ {who:'P', tag:'premise', say:'A human being’s existence assumes other human beings. “If I could live all alone” is an unsound premise.',
+  pic:G({h:[0,0,'A human','me'], o:[1.3,0,'Other humans','me']}, [['h','o','presupposes']])},
+ {who:'Y', tag:'objection', say:'What about purely inner worries? Happiness, freedom, the meaning of life — those aren’t about other people!',
+  f:'∃ problem ∉ Interpersonal ?',
+  pic:V({a:'your problems', b:'problems involving others', ka:'bad', kb:'me', pts:[['“inner worry”?','a']]})},
+ {who:'P', tag:'answer', say:'There’s no purely inner worry. Whatever the worry, other people’s shadows are in it. A person is an “individual” only among others.',
+  pic:G({w:[0,0,'Any worry','bad'], s:[1.3,0,'others’ shadows\ninside it','me']}, [['w','s','contains']])},
+ {who:'P', tag:'link', say:'You feared relationships so much that you came to dislike yourself — that’s what we saw in §2.1.',
+  f:'A10 ∧ T12',
+  pic:G({f:[0,0,'Fear of\nrelationships','bad'], d:[1.3,0,'Self-dislike','me']}, [['f','d','produces']])},
+],
+essence:[
+  ['Y','Living alone in the universe would be lonely, not problem-free.'],
+  ['P','Loneliness needs others: it is exclusion from people who are there (D14).'],
+  ['P','Remove all others and every problem vanishes — but no human can exist without others.'],
+  ['Y','Surely some worries are purely inner: freedom, happiness, meaning?'],
+  ['P','No worry is purely inner; other people’s shadows are always in it.'],
+  ['T','A10: all problems are interpersonal relationship problems — so they must be solved inside relationships.']],
+take:'Every problem has other people in it. Problems can’t be solved by leaving people — only inside relationships.'});
+</script>

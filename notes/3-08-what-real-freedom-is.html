@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Real Freedom Is</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.8', uses:['T30','A10','D29','T29','D12'], new:['D31','D32','T31'],
+moves:[
+ {who:'P', tag:'agree', say:'Nobody wants to be disliked — me neither. Yet some people dislike me, and some dislike you. That’s a fact.',
+  pic:G({w:[0,0,'Want: liked\nby all','goal'], f:[1.4,0,'Fact: some\ndislike you','past']}, [['w','f','vs','n']])},
+ {who:'P', tag:'definition', say:'Not wanting to be disliked is natural — Kant calls it “inclination”. Following inclination like a stone rolling downhill isn’t freedom.',
+  f:'D31',
+  pic:G({s:[0,0,'Stone at top','x'], b:[1.3,1,'Rolls down:\nslave to pull','bad']}, [['s','b','gravity']])},
+ {who:'P', tag:'definition', say:'We aren’t stones. Freedom is pushing your tumbling self back up — resisting the pull.',
+  f:'D32: freedom = own principles over inclination',
+  pic:G({b:[0,1,'You, tumbling','me'], t:[1.3,0,'Climb back up:\nfreedom','act']}, [['b','t','resist']])},
+ {who:'P', tag:'conclusion', say:'So: freedom is being disliked by other people.',
+  chk:'stated too strongly. Valid form: being disliked is the unavoidable COST (and sign) of freedom — not its definition (T31).',
+  pic:G({f:[0,0,'Living freely','act'], d:[1.4,0,'Someone\ndislikes you','x']}, [['f','d','always costs']])},
+ {who:'P', tag:'clarify', say:'Not “seek to be disliked”, not “do wrong”. Just: don’t be afraid of being disliked.',
+  pic:tb(['', 'Adler says?'], [['Try to be disliked','✗'],['Do wrong','✗'],['Don’t FEAR being disliked','✓']])},
+ {who:'P', tag:'not escape', say:'Freedom isn’t quitting your home, school, company. Without accepting the cost, you’d never live your own way.',
+  pic:G({q:[0,0,'Quit the\norganization','x'], f:[1.3,0,'Freedom?','bad']}, [['q','f','','x']])},
+ {who:'P', tag:'choice', say:'Life where all like me vs life where some dislike me? I’d choose the second without hesitation.',
+  pic:tb(['Life', 'Free?', 'Possible?'], [['Everyone likes me','✗','✗ (T30)'],['Some dislike me','✓','✓']])},
+ {who:'Y', tag:'question', say:'Are you free, now?  P: Yes. I am free.',
+  pic:G({p:[0,0,'Philosopher','me'], f:[1.3,0,'Free','act']}, [['p','f','is']])},
+ {who:'P', tag:'split', say:'Not wanting to be disliked: my task. Whether someone dislikes me: their task.',
+  pic:G({m:[0,0,'Not wanting to\nbe disliked','me',165], t:[1.4,0,'Whether they\ndislike me','x',165]}, [['m','t','mine | theirs','-n']])},
+ {who:'P', tag:'title', say:'The courage to be happy includes the courage to be disliked.',
+  pic:G({h:[0,0,'Courage to\nbe happy','goal'], d:[1.4,0,'Courage to\nbe disliked','act']}, [['h','d','includes']])},
+],
+proofs:{T31:[
+ ['Freedom = living by your own principles, not by others’ expectations.','D32'],
+ ['People expect incompatible things; you can’t satisfy all of them.','T30'],
+ ['So living your own way leaves some expectations unmet.','1, 2'],
+ ['Some people whose expectations are unmet will dislike you — and that is their task.','T29'],
+ ['∴ If you live freely, someone will dislike you: being disliked is the cost of freedom.','3, 4'],
+]},
+notes:{T31:'Direction matters: freedom ⇒ some dislike. NOT: being disliked ⇒ you are free.'},
+essence:[
+  ['P','Nobody wants to be disliked — it’s a natural inclination (D31).'],
+  ['P','Freedom is resisting the pull, like pushing a rolling stone back uphill (D32).'],
+  ['P','Since you can’t please everyone (T30), living your way means someone dislikes you.'],
+  ['P','Not “seek to be disliked” — just don’t fear it.'],
+  ['T','T31: being disliked is the cost and sign of freedom. The courage to be happy includes the courage to be disliked.']],
+take:'Being disliked is the price of living freely. Don’t seek it — just stop fearing it.'});
+</script>

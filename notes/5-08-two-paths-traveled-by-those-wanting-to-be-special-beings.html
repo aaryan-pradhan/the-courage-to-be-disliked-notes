@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Two Paths to Being Special</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.8', uses:['D16','A2','A9','A15','D44'], new:['D45','T53'],
+moves:[
+ {who:'Y', tag:'objection', say:'Fine, I might like myself through contribution. But happiness needs more: a great achievement, something that proves “I, no one else”. Self-realization!',
+  pic:G({c:[0,0,'Contribution','me'], g:[1.4,0,'+ Great\nachievement?','goal']}, [['c','g','not enough?']])},
+ {who:'Y', tag:'fear', say:'I don’t want to shelve books forever. My father buried himself in work and never looked happy.',
+  pic:G({f:[0,0,'Father:\nalways busy','x'], u:[1.3,0,'Never happy?','bad']}, [['f','u']])},
+ {who:'P', tag:'example', say:'Look at children. Many first try to be especially GOOD: obey, study, excel — for the parents’ attention.',
+  pic:G({c:[0,0,'Child','me'], g:[1.3,0,'Especially\ngood','act'], a:[2.6,0,'Attention','goal']}, [['c','g'],['g','a']])},
+ {who:'P', tag:'switch', say:'When that fails, they flip to being especially BAD. Different road, same goal: to be special.',
+  f:'goal(good) = goal(bad) = special',
+  pic:G({c:[0,0.5,'Child','me'], g:[1.2,0,'Especially\ngood','act'], b:[1.2,1,'Especially\nbad','bad'], s:[2.4,0.5,'Goal: be\n“special”','goal']},
+        [['c','g','first'],['c','b','if that fails'],['g','s'],['b','s']])},
+ {who:'P', tag:'definition', say:'Problem behavior gets attention without healthy effort: the pursuit of easy superiority. Throwing erasers in class works — instantly.',
+  f:'D45',
+  pic:tb(['Path', 'Effort needed', 'Gets attention?'], [['Excel at studies','lots','✓ eventually'],['Disrupt class','none','✓ instantly']])},
+ {who:'P', tag:'proves', say:'So scolding doesn’t stop it. Scolding IS attention. The goal is reached, so the behavior continues.',
+  f:'T53',
+  pic:G({b:[0,0,'Problem\nbehavior','bad'], r:[1,0,'Parents rebuke','x'], a:[2,0,'= attention\n(goal reached)','goal']}, [['b','r'],['r','a'],['a','b','repeat']])},
+ {who:'P', tag:'link', say:'This links to revenge (§2.8): cause trouble for others while becoming “special”.',
+  pic:G({e:[0,0,'Easy superiority','bad'], r:[1.4,0,'Revenge (A15)','bad']}, [['e','r','linked','n']])},
+],
+proofs:{T53:[
+ ['Problem behavior predictably earns attention; that is its goal.','A9, D45'],
+ ['A rebuke is a form of attention.','observation'],
+ ['So rebuking delivers the goal.','1, 2'],
+ ['A behavior whose goal is reached keeps going.','A2'],
+ ['∴ Rebuking problem behavior keeps it going.','3, 4'],
+]},
+essence:[
+  ['Y','Happiness needs more: a great achievement that proves “I”.'],
+  ['P','Children first try to be especially good; when that fails, especially bad — same goal: be special.'],
+  ['P','Being bad is the pursuit of easy superiority (D45): attention without effort.'],
+  ['T','T53: rebuke is attention, so it feeds problem behavior. (Linked to revenge.)']],
+take:'Especially good or especially bad — same goal: be special. Scolding feeds the bad path, because attention is the prize.'});
+</script>

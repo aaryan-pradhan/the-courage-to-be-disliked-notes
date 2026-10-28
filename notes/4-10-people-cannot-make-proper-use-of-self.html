@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>People Cannot Make Proper Use of Self</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.10', uses:['D20','D11','T24','D26','D30'], new:['A23','T42','T43'],
+moves:[
+ {who:'Y', tag:'objection', say:'I’m alive, yet I feel no worth. Belittled since childhood. My library job — any machine could do it. Nobody needs “this me”.',
+  pic:G({j:[0,0,'Shelving books','x'], r:[1.3,0,'Replaceable','bad'], n:[2.6,0,'No worth','bad']}, [['j','r'],['r','n']])},
+ {who:'P', tag:'answer', say:'Build one horizontal relationship with one person. One is enough. Start there.',
+  pic:G({y:[0,0,'You','me'], o:[1.3,0,'One person','me']}, [['y','o','equal','n']])},
+ {who:'Y', tag:'objection', say:'I already have friends — horizontal ones. My parents and boss are just different.',
+  pic:tb(['Person', 'Youth’s relation'], [['Friends','horizontal?'],['Parents','vertical'],['Boss','vertical']])},
+ {who:'P', tag:'axiom', say:'Lifestyle is one. Nobody is clever enough to switch lifestyles per person.',
+  f:'A23',
+  pic:G({l:[0,0,'One lifestyle','me'], a:[1.3,-0.5,'with friends','x'], b:[1.3,0.5,'with boss','x']}, [['l','a','same'],['l','b','same']])},
+ {who:'P', tag:'proves', say:'One vertical relationship and soon ALL are vertical — “A is above me, B below; I’ll follow A, ignore B.” One truly horizontal relationship and all start turning.',
+  f:'T42',
+  pic:G({v:[0,0,'1 vertical','bad'], av:[1.3,0,'all vertical','bad'], h:[0,1,'1 horizontal','act'], ah:[1.3,1,'all become\nhorizontal','act']}, [['v','av'],['h','ah','gradually']])},
+ {who:'Y', tag:'objection', say:'A 20-year-old recruit buddying up to a 60-year-old director? That ignores social order!',
+  pic:G({r:[0,0,'Recruit','me'], d:[1.3,0,'Director','x']}, [['r','d','buddies?']])},
+ {who:'P', tag:'clarify', say:'Respect elders; roles and responsibilities differ. But be equal in consciousness, and say what needs saying.',
+  pic:tb(['', 'Allowed?'], [['Different roles','✓'],['Respect elders','✓'],['Feel inferior in worth','✗'],['Stay silent to keep the peace','✗']])},
+ {who:'P', tag:'proves', say:'Your boss’s order fails. “His responsibility — I just followed orders.” No: that’s a life-lie. You could have refused or proposed better.',
+  f:'T43',
+  pic:G({o:[0,0,'Boss’s order','x'], c:[1,0,'You choose\nto follow','me'], f:[2,0,'Failure','bad'], r:[2,1,'Your share of\nresponsibility','act']}, [['o','c'],['c','f'],['c','r']])},
+ {who:'P', tag:'start here', say:'You’re already in a horizontal relationship — with me, right now. To me, you are an irreplaceable friend.',
+  pic:G({y:[0,0,'Youth','me'], p:[1.3,0,'Philosopher','me']}, [['y','p','friends, equal','n']])},
+ {who:'Y', tag:'fear', say:'I’m afraid. I’ve never had an older friend. Give me time.  P: Age doesn’t matter. Close the distance little by little.',
+  pic:G({f:[0,0,'Far','x'], c:[1.3,0,'Arm’s length:\ncan reach out','act']}, [['f','c','little by little']])},
+],
+proofs:{
+ T42:[
+  ['A person has one lifestyle, not one per relationship.','A23'],
+  ['Choosing vertical or horizontal is part of that lifestyle.','D11'],
+  ['∴ One vertical relationship spreads to all; one truly horizontal one starts turning all horizontal.','1, 2'],
+ ],
+ T43:[
+  ['There was space to refuse an order or to propose a better way.','observation'],
+  ['So following it was your choice.','1'],
+  ['Responsibility for a choice belongs to the one who chooses.','T24'],
+  ['∴ “I was just following orders” does not remove your responsibility; claiming it does is a life-lie.','2, 3, D26'],
+ ]},
+essence:[
+  ['Y','I feel no worth; any machine could do my job.'],
+  ['P','Build one horizontal relationship with one person.'],
+  ['P','Lifestyle is one (A23): one vertical relationship turns all vertical; one horizontal starts the turn (T42).'],
+  ['Y','A recruit can’t be equals with a director!'],
+  ['P','Roles differ; consciousness is equal. “Just following orders” is a life-lie (T43).'],
+  ['T','Start here: this friendship, closing the distance little by little.']],
+take:'Lifestyle is one: build a single truly equal relationship and the rest will follow. Start here.'});
+</script>

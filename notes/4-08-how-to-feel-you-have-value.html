@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Feel You Have Value</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.8', uses:['D37','T37','T39','D15','D34','D32'], new:['A20','A21','T40'],
+moves:[
+ {who:'Y', tag:'question', say:'No praise, no rebuke. Then what words are left?',
+  pic:G({q:[0,0,'What do\nI say?','goal']})},
+ {who:'P', tag:'answer', say:'When an equal — a friend — helps you clean, what do you say? “Thank you.” “I’m glad.” “That was a big help.”',
+  pic:tb(['Words', 'Type', 'Vertical?'], [['“Good job!”','judgment','✓'],['“Thank you”','gratitude','✗'],['“I’m glad”','joy','✗'],['“Big help”','gratitude','✗']])},
+ {who:'P', tag:'rule', say:'The most important thing: don’t judge others. Judgment comes from vertical relationships.',
+  pic:G({j:[0,0,'Judgment','bad'], v:[1.3,0,'Vertical','bad']}, [['j','v','comes from']])},
+ {who:'P', tag:'contrast', say:'Praise = “good” by THEIR yardstick — chase it and you brake your own freedom. “Thank you” tells you: you contributed.',
+  pic:G({p:[0,0,'Praise','x'], y:[1.4,0,'Their yardstick\n→ less freedom','bad'], t:[0,1,'“Thank you”','me'], c:[1.4,1,'“I contributed”','act']},
+        [['p','y'],['t','c']])},
+ {who:'P', tag:'axiom', say:'Adler: “Only when a person feels he has worth can he have courage.”',
+  f:'A20: courage ⇒ felt worth',
+  pic:G({w:[0,0,'Feel worth','act'], c:[1.3,0,'Courage','goal']}, [['w','c','required for']])},
+ {who:'P', tag:'axiom', say:'And how do you feel worth? When you feel “I am of use to someone” — judged by your own view, not theirs.',
+  f:'A21',
+  pic:G({u:[0,0,'“I am of use\nto someone”','me'], w:[1.4,0,'Sense of worth','act']}, [['u','w','gives']])},
+ {who:'P', tag:'proves', say:'So everything connects: concern for others, horizontal relationships, encouragement → “I am of use” → worth → courage to live.',
+  f:'T40',
+  pic:G({t:[0,0,'“Thank you”','me'], c:[1,0,'“I contributed”','me'], w:[2,0,'Worth (A21)','act'], g:[3,0,'Courage (A20)','goal']},
+        [['t','c'],['c','w'],['w','g']])},
+],
+proofs:{T40:[
+ ['“Thank you” expresses gratitude: it tells you that you were of use to someone.','observation'],
+ ['Feeling “I am of use to someone” gives a sense of worth.','A21'],
+ ['Only a person who feels worth can have courage.','A20'],
+ ['Praise instead places you below and teaches “I lack ability”.','T39'],
+ ['∴ Gratitude, not praise, builds courage.','1–4'],
+]},
+essence:[
+  ['Y','No praise, no rebuke — then what do I say?'],
+  ['P','What you say to an equal who helped: “Thank you,” “I’m glad,” “That was a big help.” Don’t judge.'],
+  ['P','Courage needs a felt sense of worth (A20); worth is felt as “I am of use to someone” (A21).'],
+  ['T','T40: gratitude, not praise, builds courage.']],
+take:'Say “thank you”, not “good job”. Feeling “I am of use” is what gives worth — and worth is what gives courage.'});
+</script>

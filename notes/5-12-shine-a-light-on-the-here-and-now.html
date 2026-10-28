@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shine a Light on the Here and Now</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'5.12', uses:['T6','D26','A8','D47'],
+moves:[
+ {who:'Y', tag:'objection', say:'You reject looking back (etiology) AND looking forward (planning). I’d be walking blindfolded on a path with no path!',
+  pic:G({p:[0,0,'Past ✗','past'], y:[1,0,'You','me'], f:[2,0,'Future ✗','x']}, [['y','p','can’t see'],['y','f','can’t see']])},
+ {who:'P', tag:'image', say:'On a stage under house lights, you see to the back row. Under a bright spotlight, you can’t see even the front row.',
+  pic:tb(['Lighting', 'See past & future?', 'See now clearly?'], [['Dim house lights','✓ (or think so)','✗ dim'],['Bright spotlight on now','✗','✓ bright']])},
+ {who:'P', tag:'claim', say:'Seeing the past and predicting the future proves you’re living in dim twilight. Live earnestly — spotlight on here and now.',
+  pic:G({d:[0,0,'Dim light on\nwhole life','x'], s:[1.4,0,'Spotlight on\nhere and now','act']}, [['d','s','switch']])},
+ {who:'P', tag:'diagnosis', say:'Etiology turns life into a big cause-and-effect story: born here, this school, this company ⇒ “so I must live like this”. That’s a life-lie.',
+  f:'D26',
+  pic:G({b:[0,0,'Birth','past'], s:[1,0,'School','past'], c:[2,0,'Company','past'], m:[3,0,'“So I have\nno choice”','bad']}, [['b','s'],['s','c'],['c','m']])},
+ {who:'Y', tag:'objection', say:'Adler’s “lifestyle” is a story too!',
+  pic:G({l:[0,0,'Lifestyle =\nstory?','x']})},
+ {who:'P', tag:'answer', say:'Lifestyle is about now, and changeable. Your past looks like a straight line only because you kept deciding not to change. The page ahead is blank.',
+  f:'A8',
+  pic:G({p:[0,0,'Past “line”','past'], r:[1.3,0,'= many “don’t\nchange” choices','me',165], b:[2.6,0,'Future:\nblank page','act']}, [['p','r','really'],['r','b','next']])},
+ {who:'P', tag:'not hedonism', say:'Spotlight on now doesn’t mean “live for pleasure”. It means doing what you can do now, earnestly and conscientiously.',
+  pic:tb(['', 'Hedonism', 'Here and now'], [['Focus','pleasure','what I can do'],['Effort','avoided','earnest']])},
+],
+essence:[
+  ['Y','No past, no plans — I’d walk blindfolded!'],
+  ['P','Of course: under a bright spotlight on now, you can’t see the back row.'],
+  ['P','The life-story view (birth → school → company ⇒ “no choice”) is a life-lie.'],
+  ['P','Your past looks like a line only because you kept choosing not to change; the page ahead is blank.'],
+  ['T','Shine the spotlight on here and now: do what you can, earnestly — not hedonism.']],
+take:'Turn up the spotlight on now. The past “line” is only your past choices; the page ahead is blank.'});
+</script>

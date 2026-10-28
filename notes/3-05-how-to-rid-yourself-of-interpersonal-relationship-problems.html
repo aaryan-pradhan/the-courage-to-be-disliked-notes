@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rid Yourself of Relationship Problems</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.5', uses:['D29','D30','D26','A9','D13'], new:['T29'],
+moves:[
+ {who:'P', tag:'scenario', say:'Your parents rage and cry over your job as a librarian, threaten to disown you. How they handle their disapproval is THEIR task.',
+  pic:G({y:[0,0,'Your choice:\nlibrarian','me'], p:[1.4,0,'Parents’\ndisapproval','x']}, [['y','p','their task','-']])},
+ {who:'Y', tag:'shock', say:'So it doesn’t matter how sad I make them?!',
+  pic:G({s:[0,0,'Their sadness','x'], q:[1.3,0,'Your problem?','bad']}, [['s','q','?']])},
+ {who:'P', tag:'rule', say:'All you can do is choose the best path you believe in. What others think of that choice is their task.',
+  f:'T29',
+  pic:G({y:[0,0,'Choose your\nbest path','me'], j:[1.4,0,'Their judgment','x']}, [['y','j','not yours','x']])},
+ {who:'P', tag:'diagnosis', say:'Why do you worry about how people see you? You haven’t separated tasks. “You’re the only one worried how you look.”',
+  pic:G({l:[0,0,'How they\nsee your face','x'], c:[1.4,0,'Your control','bad']}, [['l','c','','x']])},
+ {who:'P', tag:'example', say:'A boss yells, ignores your efforts. Being liked by him isn’t your job. “I can’t work because of my boss” is a life-lie.',
+  f:'D26 · D13: “if only I didn’t have this boss…”',
+  pic:G({l1:[-0.75,0,'Etiology','lbl'], b:[0,0,'Awful boss','x'], c:[1,0,'Can’t work','bad'],
+         l2:[-0.75,1,'Teleology','lbl'], g:[0,1,'Don’t want to\nface my work','goal'], n:[1,1,'Need an\nawful boss','me']},
+        [['b','c'],['g','n']])},
+ {who:'P', tag:'separate', say:'His unreasonable anger is his task. Don’t cozy up or bow down. Do your own tasks without lying.',
+  pic:G({b:[0,0,'Boss’s anger','x'], m:[1.4,0,'Your work','me']}, [['b','m','his task | yours','-n']])},
+ {who:'P', tag:'steps', say:'The concrete steps you asked for:',
+  pic:G({a:[0,0,'1. Whose task\nis this?','goal'], b:[1,0,'2. Draw the\nline','me'], c:[2,0,'3. Don’t intrude,\ndon’t let them','act']}, [['a','b'],['b','c']])},
+],
+proofs:{T29:[
+ ['A task belongs to whoever receives the result of the choice.','D29'],
+ ['Their choice to like or dislike you lives in their mind; they carry its results.','observation'],
+ ['And you cannot control it.','observation'],
+ ['∴ What others think of you is their task, not yours.','1–3'],
+]},
+essence:[
+  ['P','Your parents’ fury at your career is their task.'],
+  ['Y','So their sadness doesn’t matter?!'],
+  ['P','Choose the best path you believe in; how others judge it is their task (T29).'],
+  ['P','Worrying how you look means you haven’t separated tasks. “I can’t work because of my boss” is a life-lie.'],
+  ['T','Steps: ask “whose task?”, draw the line, don’t intrude and don’t let anyone intrude.']],
+take:'Your path: your task. What they think of it: their task. Three steps — ask, separate, don’t intrude.'});
+</script>

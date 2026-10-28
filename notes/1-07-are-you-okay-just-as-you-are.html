@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Are You Okay Just As You Are?</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'1.7', uses:['A2','A4'], new:['D9','A5','T7'],
+moves:[
+ {who:'Y', tag:'objection', say:'I can’t be like Y: personality is fixed. You can pile up knowledge, but personality doesn’t move.',
+  f:'personality = constant ?   (answered in §1.9)',
+  pic:G({k:[0,0,'Knowledge ↑','x'], p:[1.3,0,'Personality','past']}, [['k','p','no effect?','x']])},
+ {who:'P', tag:'probe', say:'Why do you want to be Y? To be happy. So you are not happy now — you don’t like yourself.',
+  f:'want(be Y) ⇒ goal = happy ⇒ ¬happy now',
+  pic:G({w:[0,0,'Want to be Y','me'], g:[1,0,'Goal:\nbe happy','goal'], n:[2,0,'So: not happy\nnow','bad']}, [['w','g'],['g','n']])},
+ {who:'P', tag:'example', say:'Few people say “I like myself.” Me? I don’t want to be anyone else — I accept who I am.',
+  pic:G({p:[0,0,'Philosopher','me'], a:[1.4,0,'Accepts himself,\nno swap wanted','act',170]}, [['p','a']])},
+ {who:'P', tag:'fact', say:'You can’t be reborn as Y. You are not Y.',
+  f:'you ≠ Y;   equipment can’t be swapped   (A5)',
+  pic:G({me:[0,0,'You','me'], y:[1.3,0,'Y','x']}, [['me','y','swap','x']])},
+ {who:'P', tag:'balance', say:'It’s okay to be you. It’s not okay to stay “just as you are”. Keep walking.',
+  pic:G({a:[0,0,'Accept being you','act'], s:[1.3,0,'Stand still','bad']})},
+ {who:'P', tag:'key idea', say:'Adler: “Not what you’re born with, but what use you make of that equipment.”',
+  f:'life = use(equipment)   (D9)',
+  pic:G({e:[0,0,'Equipment\n(fixed)','past'], u:[0,1,'Use\n(yours)','me'], l:[1.3,0.5,'Your life','act']}, [['e','l'],['u','l']])},
+],
+proofs:{T7:[
+ ['Your equipment can’t be swapped for someone else’s.','A5'],
+ ['So becoming Y (replacement) is impossible.','1'],
+ ['How you use your equipment is your chosen means toward goals.','A2'],
+ ['And people can change.','A4'],
+ ['So changing your use (renewal) is possible.','3, 4'],
+ ['∴ Change = renewal of use, never replacement of equipment.','2, 5'],
+]},
+essence:[
+  ['Y','Personality is fixed; knowledge can’t change it, so I can’t become like Y.'],
+  ['P','You want to be Y in order to be happy — so you are unhappy now and don’t like yourself.'],
+  ['P','You can’t be reborn as Y. It’s okay to be you, but not okay to stand still.'],
+  ['P','Not what you were born with, but what use you make of that equipment (D9).'],
+  ['T','T7: change = renewal of use, never replacement of equipment.']],
+take:'You can’t trade in your hand of cards. You can change how you play it.'});
+</script>

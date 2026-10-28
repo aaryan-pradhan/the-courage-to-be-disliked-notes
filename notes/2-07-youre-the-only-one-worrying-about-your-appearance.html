@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Only You Worry About Your Appearance</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'2.7', uses:['A10','D15','D20'], new:['D21','D22','T17'],
+moves:[
+ {who:'P', tag:'link', say:'Why talk about inferiority? Because if competition sits at the center of your relationships, you can’t escape problems.',
+  pic:G({c:[0,0,'Competition','bad'], w:[1.3,0,'Winners & losers','x']}, [['c','w','always makes']])},
+ {who:'Y', tag:'objection', say:'It’s perfectly fine to have winners and losers!',
+  pic:G({w:[0,0,'Winners','act'], l:[1.3,0,'Losers','bad']}, [['w','l','fine?','n']])},
+ {who:'P', tag:'chain', say:'Compete, and you compare: A got into that university, B got that job, C got that partner. “This is all I’ve got.”',
+  f:'competition ⇒ constant comparison ⇒ inferiority',
+  pic:G({a:[0,0,'Mr. A: top\nuniversity','x'], b:[0,1,'Mr. B: big\ncompany','x'], y:[1.3,0.5,'You: “this is\nall I’ve got”','bad']}, [['a','y'],['b','y']])},
+ {who:'P', tag:'proves', say:'Then others stop being rivals and become enemies. The world turns dangerous. Even winners get no peace — they must keep winning.',
+  f:'their gain = my loss (D21) ⇒ everyone is a threat   (T17)',
+  pic:G({c:[0,0,'Their gain =\nmy loss','bad'], e:[1,0,'Everyone is\nan enemy','bad'], d:[2,0,'World is\ndangerous','bad']}, [['c','e'],['e','d']])},
+ {who:'P', tag:'example', say:'A teen spent ages fixing his hair in the mirror. His grandmother: “You’re the only one who’s worried how you look.”',
+  pic:G({y:[0,0,'You: “everyone\nwatches me”','me',170], o:[1.4,0,'Others: busy with\nthemselves','x',170]}, [['y','o','watching?','x']])},
+ {who:'Y', tag:'admits', say:'Fine: I see arrows flying at me, I feel watched and judged. Truthfully, even walking on my hands, nobody would notice. But my inferiority — chosen? With a goal? Nonsense.',
+  pic:G({w:[0,0,'Feels watched','me'], r:[1.4,0,'Reality: nobody\nnotices','x']}, [['w','r','vs','n']])},
+ {who:'Y', tag:'objection', say:'My older brother beat me at everything; my parents compared us constantly. I’m a gourd grown without sun. Of course I’m twisted!',
+  f:'past (brother, parents) ⇒ inferiority   (etiology again)',
+  pic:G({b:[0,0,'Brother +\ncomparisons','past'], g:[1.3,0,'Twisted gourd','bad']}, [['b','g','causes?']])},
+ {who:'P', tag:'alternative', say:'Without competition, others become comrades. Their happiness stops being your defeat — you can celebrate it, even help it.',
+  f:'D22: their gain ≠ my loss ⇒ celebrate, help',
+  pic:G({c:[0,0,'Their gain ≠\nmy loss','act'], m:[1,0,'Comrades','act'], s:[2,0,'World is\nsafe','act']}, [['c','m'],['m','s']])},
+ {who:'P', tag:'payoff', say:'When you truly feel “people are my comrades”, your view of the world changes, and your relationship problems shrink dramatically.',
+  pic:tb(['', 'Competition', 'Comrades'], [['Others are','enemies','comrades'],['Their happiness','my defeat','to celebrate'],['The world','dangerous','safe']])},
+ {who:'Y', tag:'objection', say:'That’s sunflower talk — raised in full sun. A gourd grown in the shade can’t think that way!  P: You’re returning to etiology.',
+  pic:G({s:[0,0,'Sunflower\n(sun)','act'], g:[0,1,'Gourd\n(shade)','bad'], e:[1.4,0.5,'= etiology\nagain','x']}, [['s','e'],['g','e']])},
+],
+proofs:{T17:[
+ ['In a competition, another person’s gain is your loss.','D21'],
+ ['So every other person’s success threatens you.','1'],
+ ['A person whose success threatens you is someone to fear and guard against — an enemy.','definition'],
+ ['If everyone is an enemy, the world is a dangerous place; even a winner must keep guarding.','2, 3'],
+ ['∴ Seeing life as competition turns people into enemies and the world into danger.','1–4'],
+]},
+essence:[
+  ['P','With competition at the center of relationships, you can’t escape their problems.'],
+  ['P','Competition: their gain is your loss (D21) ⇒ constant comparison ⇒ inferiority ⇒ everyone becomes an enemy.'],
+  ['P','Even winners get no peace. And people aren’t actually watching you.'],
+  ['Y','My brother and parents made me this way!'],
+  ['P','That’s etiology again. Drop competition and others become comrades (D22) whose happiness you can celebrate.'],
+  ['T','T17: competition makes enemies and a dangerous world; comrades make it safe.']],
+take:'Competition makes everyone an enemy. Drop it, and people become comrades — and the world becomes safe.'});
+</script>

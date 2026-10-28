@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cut the Gordian Knot</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.6', uses:['D30','D28','D24'], new:['A18'],
+moves:[
+ {who:'Y', tag:'objection', say:'It’s true in theory. But morally? When people worry about you, do you push them away — “that’s intrusion!”?',
+  pic:G({w:[0,0,'Their goodwill','act'], p:[1.3,0,'“Intrusion!”','bad']}, [['w','p','rejected?']])},
+ {who:'P', tag:'story', say:'Alexander the Great faced a knot no one could untie. “Whoever unties it rules Asia.” He drew his sword and cut it.',
+  pic:G({k:[0,0,'Tangled knot','bad'], u:[1.3,0,'Untie by hand','x'], c:[1.3,1,'Cut with sword','act']}, [['k','u','failed','x'],['k','c','works']])},
+ {who:'P', tag:'meaning', say:'Tangled bonds between people aren’t undone the usual way. They need a new approach: separation of tasks.',
+  pic:G({b:[0,0,'Tangled bonds','bad'], s:[1.4,0,'Separation\nof tasks','act']}, [['b','s','cut with']])},
+ {who:'Y', tag:'objection', say:'Not everyone is Alexander. And cutting ties drives people into isolation!',
+  pic:G({c:[0,0,'Cut ties','x'], i:[1.3,0,'Isolation?','bad']}, [['c','i','?']])},
+ {who:'P', tag:'answer', say:'Separation isn’t the goal of a relationship. It’s the gateway. Read a book with your face on the page — you see nothing.',
+  f:'A18: good relationships need moderate distance',
+  pic:G({c:[0,0,'Too close:\nstuck together','bad'], m:[1,0,'Moderate:\nhelp, don’t intrude','act',170], f:[2,0,'Too far:\ncan’t consult','bad']}, [['c','m','',''],['f','m','','']])},
+ {who:'P', tag:'root', say:'“They did something for me, so I must repay” — that’s reward thinking. You alone decide what you do.',
+  f:'reward ⇒ “I gave this, you owe that”',
+  pic:G({g:[0,0,'“I gave this”','x'], o:[1.3,0,'“You owe that”','bad']}, [['g','o','reward tie']])},
+ {who:'P', tag:'example', say:'Tying a slow child’s shoes is faster. But it takes his task away. Adler: children never taught to face challenges avoid all challenges.',
+  pic:G({t:[0,0,'Parent ties\nthe shoes','x'], l:[1,0,'Child learns\nnothing','bad'], a:[2,0,'Avoids all\nchallenges','bad']}, [['t','l'],['l','a']])},
+ {who:'P', tag:'summary', say:'Adler’s ideas cut against common sense: deny etiology, deny trauma, adopt teleology, treat every problem as relational, don’t seek recognition, separate tasks.',
+  pic:tb(['Common sense says', 'Adler says'], [['the past causes me','goals drive me'],['trauma exists','no experience decides'],['seek recognition','don’t'],['help by taking over','separate tasks']])},
+],
+essence:[
+  ['Y','Isn’t separating tasks cold — rejecting people’s goodwill?'],
+  ['P','Tangled bonds need a new approach, like Alexander cutting the Gordian knot.'],
+  ['Y','It will drive people into isolation.'],
+  ['P','Separation is the gateway, not the goal: moderate distance — close enough to help, not intruding (A18).'],
+  ['P','“They gave, so I owe” is reward thinking; tying a child’s shoes for him takes his task away.'],
+  ['T','Cut the knot with separation of tasks — it creates the right distance, not a wall.']],
+take:'Cut tangled bonds with separation of tasks. It isn’t a wall — it’s the right distance: close enough to help, never intruding.'});
+</script>

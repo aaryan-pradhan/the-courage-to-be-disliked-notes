@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deny the Desire for Recognition</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'3.1', uses:['A10','D22','D15'], new:['D27'],
+moves:[
+ {who:'Y', tag:'idea', say:'Dostoevsky: “Money is coined freedom.” But even rich, you could be unloved and friendless. So money isn’t freedom.',
+  f:'money ⇒ some freedom;  money ⇏ happiness',
+  pic:G({m:[0,0,'Money','x'], f:[1.3,0,'Some freedom','act'], h:[1.3,1,'Happiness','x']}, [['m','f'],['m','h','','x']])},
+ {who:'Y', tag:'insight', say:'What’s left are bonds: people you’re stuck with, a moody boss. We can’t escape them. “All problems are interpersonal” — I see it now.',
+  f:'A10 accepted',
+  pic:G({y:[0,0.5,'You','me'], a:[1.3,0,'Moody boss','x'], b:[1.3,1,'People you’re\nstuck with','x']}, [['y','a','bond','n'],['y','b','bond','n']])},
+ {who:'Y', tag:'problem', say:'But my parents aren’t enemies — they raised me. Yet they compared me to my brother and pushed on every choice.',
+  pic:G({p:[0,0,'Parents','x'], e:[1.3,0,'Enemies?','bad'], c:[1.3,1,'Comrades?','act']}, [['p','e','✗ no'],['p','c','? unclear']])},
+ {who:'Y', tag:'detail', say:'They told me: study more, avoid those friends, get into this university, take this job. I became a librarian; they wanted me in Dad’s printing plant like my brother. Things got strained — too close to just ignore.',
+  pic:G({p:[0,0.5,'Parents’ plan:\nprinting plant','x',165], b:[1.4,0,'Brother: followed','x'], y:[1.4,1,'Youth: librarian','me']}, [['p','b'],['p','y','refused']])},
+ {who:'Y', tag:'admission', say:'I picked the university they wanted — resentful, but relieved: now they’d recognize me. Everyone needs recognition!',
+  f:'D27: wanting others to confirm your worth',
+  pic:G({c:[0,0,'Follow their\nwishes','me'], r:[1.3,0,'Get their\nrecognition','goal'], w:[2.6,0,'Feel worth\nsomething','act']}, [['c','r'],['r','w']])},
+ {who:'P', tag:'claim', say:'Adlerian psychology denies the need for recognition. You must NOT seek it.',
+  f:'claim (proved in §3.2 and §3.7): seeking recognition makes you unfree',
+  pic:G({r:[0,0,'Seek recognition','bad']})},
+],
+essence:[
+  ['Y','Money is “coined freedom”, but even the rich stay tangled in relationships.'],
+  ['Y','My parents aren’t enemies, yet their demands bind me — I wanted their recognition.'],
+  ['P','Adler denies the need for recognition: you must not seek it.'],
+  ['T','The hardest bond is the desire for recognition (D27) — Night 3 shows why to drop it.']],
+take:'Money buys some freedom. Relationships are what remain. And the hardest bond is the wish to be recognized.'});
+</script>

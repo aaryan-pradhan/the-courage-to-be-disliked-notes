@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Goal: Community Feeling</title><link rel="stylesheet" href="style.css"><script src="defs.js"></script><script src="kit.js"></script>
+<body><script>
+page({id:'4.2', uses:['D22','D30','A10'], new:['D34'],
+moves:[
+ {who:'Y', tag:'question', say:'Separation of tasks is the start. Simple answer: what’s the GOAL of relationships?',
+  pic:G({s:[0,0,'Separation\nof tasks','me'], g:[1.4,0,'Goal = ?','goal']}, [['s','g']])},
+ {who:'P', tag:'definition', say:'Community feeling: seeing others as comrades, and feeling you have your own place — “it’s okay to be here” — plus wanting to contribute.',
+  f:'D34',
+  pic:G({c:[0,0,'Others are\ncomrades','act'], r:[0,1,'I have a place\nhere','act'], w:[0,2,'I want to\ncontribute','act'], f:[1.4,1,'Community\nfeeling','goal']},
+        [['c','f'],['r','f'],['w','f']])},
+ {who:'P', tag:'history', say:'This concept is so debated that Adler’s proposing it made many followers part ways with him. It’s also called “social interest” — interest in society.',
+  pic:G({c:[0,0,'Community feeling','goal'], s:[1.4,0,'= social interest','me']}, [['c','s','also called','n']])},
+ {who:'P', tag:'scope', say:'Adler’s “community” isn’t just family, school, work, country. It covers all humanity, past to future, animals, plants, even objects — “an unattainable ideal”.',
+  pic:G({f:[0,0,'family','x'], s:[1,0,'school, work','x'], n:[2,0,'country','x'], h:[2,1,'humanity','me'], u:[1,1,'universe,\npast → future','goal']},
+        [['f','s','⊂'],['s','n','⊂'],['n','h','⊂'],['h','u','⊂']])},
+ {who:'P', tag:'both ways', say:'Relationships are the source of unhappiness — and also of happiness. Community feeling is the measure of a happy relationship.',
+  pic:G({r:[0,0.5,'Relationships','me'], u:[1.3,0,'Unhappiness','bad'], h:[1.3,1,'Happiness','act']}, [['r','u'],['r','h']])},
+ {who:'P', tag:'smallest unit', say:'Society’s smallest unit isn’t the family. It’s “you and I”. Two people = a society.',
+  pic:G({y:[0,0,'You','me'], i:[1.3,0,'I','me']}, [['y','i','= society','n']])},
+ {who:'P', tag:'the switch', say:'From “you and I”, make the switch: attachment to self → concern for others.',
+  pic:G({a:[0,0,'Attachment\nto self','bad'], c:[1.4,0,'Concern for\nothers','act']}, [['a','c','switch']])},
+],
+essence:[
+  ['Y','Separation is the start — what is the goal of relationships?'],
+  ['P','Community feeling (D34): others are comrades, I have a place here, I want to contribute.'],
+  ['P','“Community” reaches all humanity, past to future, the universe — an unattainable ideal.'],
+  ['P','Relationships cause unhappiness and happiness; society’s smallest unit is “you and I”.'],
+  ['T','Switch from attachment to self to concern for others.']],
+take:'Separation of tasks is the door. Community feeling — comrades plus a place to belong — is where relationships should go.'});
+</script>
