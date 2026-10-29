@@ -101,27 +101,27 @@ const tb = (head, rows) => `<table class="t"><tr>${head.map(h => `<th>${h}</th>`
 // ---------- page renderer ----------
 const file = s => `${s.id.split('.')[0]}-${s.id.split('.')[1].padStart(2, '0')}-` +
   s.t.toLowerCase().replace(/[’'“”]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.html';
-const kindOf = id => ({D: 'me', A: 'goal', T: 'act'})[id[0]];
+const kindOf = id => ({D: 'me', A: 'goal', T: 'act', F: 'past'})[id[0]];
 const pops = new Set();
 
 function chip(id) {
   if (!REG[id]) return id;
   pops.add(id);
-  return `<button class="chip k-${id[0]}" popovertarget="p-${id}">${id}</button>`;
+  return `<button class="chip k-${/^[DATF]\d/.test(id) ? id[0] : 'R'}" popovertarget="p-${id}">${id}</button>`;
 }
-const link = s => String(s ?? '').replace(/\b([DAT]\d{1,3})\b/g, (_, id) => chip(id));
+const link = s => String(s ?? '').replace(/\b([DATF]\d{1,3}|UI|MP|MT|HS|AND|SUB|NC|CE|RAA|CP|CASES)\b/g, (_, id) => chip(id));
 
 function idBox(id) {
   const [nm, st, , hid] = REG[id];
   return `<div class="ib k-${kindOf(id)} ${hid ? 'hid' : ''}"><div class="ih">${chip(id)} ${esc(nm)}
-    ${hid ? '<span class="tag">hidden in book</span>' : ''}</div><div>${link(st)}</div></div>`;
+    ${hid ? `<span class="tag">${id[0] === 'D' ? 'added: not defined in book' : 'hidden in book'}</span>` : ''}</div><div>${link(st)}</div></div>`;
 }
 
 // Proof = column of boxes, colored by what justifies each step.
 function proofPic(steps) {
   return '<div class="pf">' + steps.map(([s, why], i) => {
     const k = /^A\d/.test(why) ? 'goal' : /^D\d/.test(why) ? 'me' : /^T\d/.test(why) ? 'act'
-      : /^obs/.test(why) ? 'past' : i === steps.length - 1 ? 'act' : 'x';
+      : /^(obs|F\d)/.test(why) ? 'past' : i === steps.length - 1 ? 'act' : 'x';
     return (i ? '<div class="dn">↓</div>' : '') +
       `<div class="ib k-${k} ${i === steps.length - 1 ? 'end' : ''}"><span class="n">${i + 1}</span>
        <span class="s">${link(s)}</span><span class="why">${link(why)}</span></div>`;
@@ -191,6 +191,11 @@ function page(o) {
       act: 'behavior · result · theorem', bad: 'false'}).map(([k, l]) => `<span class="k-${k}">■ ${l}</span>`).join('')}</div>` +
     popHTML();
 
+  stepper();
+}
+
+// Next/Back stepping over the cards; #n in the URL = current card.
+function stepper() {
   const C = [...document.querySelectorAll('main .card')];
   let cur = Math.min(+location.hash.slice(1) || 0, C.length - 1);
   const show = (scroll = true) => {
@@ -207,9 +212,69 @@ function page(o) {
   show(false);
 }
 
+
+// Whole-book revision in Euclid's order (data in revision.js): definitions → axioms → facts → rules → propositions → proofs.
+// Premises of a proof = the D/A/F/T items its lines cite, in order of first use.
+const cites = t => [...new Set(PF[t].pf.map(l => l[1]).filter(w => /^[DAFT]\d+$/.test(w)))];
+
+function revision() {
+  document.title = 'Revision · whole book';
+  const night = id => +REG[id][2].split('.')[0], ids = k => Object.keys(REG).filter(i => new RegExp(`^${k}\\d`).test(i));
+  const card = (h, body) => `<section class="card"><h2>${h}</h2>${body}</section>`;
+  const part = n => n ? `Night ${n} · ${esc(NIGHTS[n])}` : 'Introduction';
+  const boxes = l => `<div class="ibs">${l.map(idBox).join('')}</div>`;
+  const D = ids('D'), A = ids('A'), F = ids('F'), T = ids('T');
+  const C = [card('How to read this', `<p>A proposition is <b>proved</b> when every line of its proof is one of:</p>
+    ${tb(['', 'Line type', 'Shown as'], [['1', 'a definition', 'D'], ['2', 'an axiom (assumed, not proved)', 'A'],
+      ['3', 'a fact (an observation from the book)', 'F'], ['4', 'an earlier proposition', 'T'],
+      ['5', 'an assumption, inside a contradiction or conditional proof', 'Assume'], ['6', 'a rule of inference applied to earlier lines', 'MP 1, 2 …']])}
+    <p>Nothing else counts — no “obviously”. Where the book skips a step, the missing premise is written out and drawn
+    <b>dashed</b>. So: <b>if you accept the definitions, axioms and facts, every proposition follows.</b></p>
+    <p>Night by Night, each in Euclid’s order: Ⅰ Definitions → Ⅱ Axioms → Ⅲ Facts → Ⅳ Propositions → Ⅴ Proofs. An item appears in the first Night that uses it. The whole book in one picture:</p>
+    <div class="pic">${MAP}</div>`)];
+  C.push(card('Rules of inference (used in every Night)', tb(['Code', 'Rule', 'Form'], RULES.map(r => [chip(r), REG[r][0], REG[r][1]])) +
+    tb(['Proof technique', 'How it works'], [['Direct', 'chain premises forward to the conclusion'],
+      ['Conditional', 'assume P, derive Q, conclude P ⇒ Q (CP)'], ['Contradiction', 'assume P, derive a clash, conclude not-P (RAA)'],
+      ['Counterexample', 'one case that breaks “every X is Y” (CE)'], ['Cases', 'every possible case leads to R (CASES)']])));
+  // An item is listed in the first Night that uses it, so nothing is used before it is stated.
+  const first = {};
+  for (const t of T) for (const i of cites(t)) first[i] = Math.min(first[i] ?? 9, night(t));
+  const at = i => Math.min(night(i), first[i] ?? 9);
+  NIGHTS.forEach((_, n) => {
+    const h = x => `${part(n)} · ${x}`, here = l => l.filter(i => at(i) === n), L = T.filter(t => night(t) === n);
+    for (const [x, l] of [['Ⅰ Definitions', here(D)], ['Ⅱ Axioms (dashed = hidden in the book)', here(A)], ['Ⅲ Facts', here(F)]])
+      if (l.length) C.push(card(h(x), boxes(l)));
+    C.push(card(h('Ⅳ Propositions'), '<div class="pf">' + L.map((t, i) => (i ? '<div class="dn">↓</div>' : '') +
+      `<div class="ib k-act${i === L.length - 1 ? ' end' : ''}"><span class="n">${chip(t)}</span><span class="s"><b>${esc(REG[t][0])}.</b>
+       ${link(REG[t][1])}</span><span></span></div>`).join('') + '</div>'));
+    for (const t of L) {
+      const s = SECTIONS.find(s => s.id === REG[t][2]), p = PF[t];
+      C.push(`<section class="card"><div class="hd"><span class="tag">${h('Ⅴ Proof')}</span><span class="tag">${p.how}</span>
+        ${p.st ? '<span class="tag">stated more precisely than the book</span>' : ''}</div>
+        <h2>${chip(t)} ${esc(REG[t][0])} <small>· <a href="${file(s)}">§${s.id}</a></small></h2>
+        <p class="stmt">${link(REG[t][1])}</p><h2>Premises</h2>${boxes(cites(t))}
+        <h2>Proof</h2>${proofPic(p.pf)}${p.note ? `<p class="chk">${link(p.note)}</p>` : ''}</section>`);
+    }
+  });
+  C.push('<section class="card take"><div class="big">The world is simple, and life is too: meaning is given now, ' +
+    'tasks are separated, comrades are horizontal, happiness is contribution, and life is lived here and now.</div></section>');
+  document.body.innerHTML = `<header><div class="top"><a href="index.html">☰ All sections</a><span>Revision</span></div>
+    <h1>Whole-book revision</h1><p class="uses">${D.length} definitions · ${A.length} axioms · ${F.length} facts · ${RULES.length} rules →
+    ${T.length} propositions, every one proved.</p></header><main>${C.join('')}</main>
+    <nav class="ctl"><button class="b" id="bk">◀ Back</button><span id="ct"></span>
+    <button class="b" id="nx">Next ▶</button><button class="b" id="all">Show all</button></nav>` + popHTML();
+  stepper();
+}
+
+// The whole book in one picture (also on §5.14).
+const MAP = G({a:[0,0,'Your world is\nyour meaning','me'], b:[1,0,'Behavior\nserves goals','goal'], c:[2,0,'Past doesn’t\ndecide','act'],
+  d:[2,1,'All problems:\nrelationships','x'], e:[1,1,'Separate\ntasks','me'], f:[0,1,'Horizontal,\ncomrades','act'],
+  g:[0,2,'Accept · trust ·\ncontribute','me'], h:[1,2,'Happiness =\ncontribution','act'], i:[2,2,'Dance here\nand now','goal']},
+  [['a','b'],['b','c'],['c','d'],['d','e'],['e','f'],['f','g'],['g','h'],['h','i']]);
+
 function index() {
   let h = '<header><h1>The Courage to Be Disliked</h1><p class="uses">One page per section. Pictures first; every claim numbered; every proof valid.</p>' +
-    '<p><button class="b" id="rq">Random recall question</button></p><div id="rqa"></div></header><main>';
+    '<p><a class="b" href="revision.html">Whole-book revision (every proof)</a> <button class="b" id="rq">Random recall question</button></p><div id="rqa"></div></header><main>';
   NIGHTS.forEach((nm, n) => {
     h += `<h2>${n ? `Night ${n}: ` : ''}${esc(nm)}</h2><ol class="toc">` + SECTIONS.filter(s => +s.id.split('.')[0] === n)
       .map(s => `<li>${s.ok ? `<a href="${file(s)}">§${s.id} ${esc(s.t)}</a>` : `<span class="soon">§${s.id} ${esc(s.t)}</span>`}</li>`).join('') + '</ol>';

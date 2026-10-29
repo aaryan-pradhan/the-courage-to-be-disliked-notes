@@ -66,3 +66,4 @@ footer{display:flex;justify-content:space-between;gap:12px;font-size:14px;paddin
 .legend .k-past{color:var(--gry)}.legend .k-goal{color:var(--amb)}.legend .k-me{color:var(--blu)}
 .legend .k-act{color:var(--grn)}.legend .k-bad{color:var(--red)}
 .toc{padding-left:20px}.toc li{margin:4px 0}.soon{color:#5b6372}
+.k-F{color:var(--gry)}.k-R{color:var(--f)}
