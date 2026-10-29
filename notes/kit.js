@@ -230,7 +230,7 @@ function revision() {
       ['5', 'an assumption, inside a contradiction or conditional proof', 'Assume'], ['6', 'a rule of inference applied to earlier lines', 'MP 1, 2 …']])}
     <p>Nothing else counts — no “obviously”. Where the book skips a step, the missing premise is written out and drawn
     <b>dashed</b>. So: <b>if you accept the definitions, axioms and facts, every proposition follows.</b></p>
-    <p>Night by Night, each in Euclid’s order: Ⅰ Definitions → Ⅱ Axioms → Ⅲ Facts → Ⅳ Propositions → Ⅴ Proofs. An item appears in the first Night that uses it. The whole book in one picture:</p>
+    <p>Night by Night, each in Euclid’s order: Ⅰ Definitions → Ⅱ Axioms → Ⅲ Facts → Ⅳ each proposition, stated and proved at once. An item appears in the first Night that uses it. The whole book in one picture:</p>
     <div class="pic">${MAP}</div>`)];
   C.push(card('Rules of inference (used in every Night)', tb(['Code', 'Rule', 'Form'], RULES.map(r => [chip(r), REG[r][0], REG[r][1]])) +
     tb(['Proof technique', 'How it works'], [['Direct', 'chain premises forward to the conclusion'],
@@ -244,12 +244,9 @@ function revision() {
     const h = x => `${part(n)} · ${x}`, here = l => l.filter(i => at(i) === n), L = T.filter(t => night(t) === n);
     for (const [x, l] of [['Ⅰ Definitions', here(D)], ['Ⅱ Axioms (dashed = hidden in the book)', here(A)], ['Ⅲ Facts', here(F)]])
       if (l.length) C.push(card(h(x), boxes(l)));
-    C.push(card(h('Ⅳ Propositions'), '<div class="pf">' + L.map((t, i) => (i ? '<div class="dn">↓</div>' : '') +
-      `<div class="ib k-act${i === L.length - 1 ? ' end' : ''}"><span class="n">${chip(t)}</span><span class="s"><b>${esc(REG[t][0])}.</b>
-       ${link(REG[t][1])}</span><span></span></div>`).join('') + '</div>'));
     for (const t of L) {
       const s = SECTIONS.find(s => s.id === REG[t][2]), p = PF[t];
-      C.push(`<section class="card"><div class="hd"><span class="tag">${h('Ⅴ Proof')}</span><span class="tag">${p.how}</span>
+      C.push(`<section class="card"><div class="hd"><span class="tag">${h('Ⅳ Proposition and proof')}</span><span class="tag">${p.how}</span>
         ${p.st ? '<span class="tag">stated more precisely than the book</span>' : ''}</div>
         <h2>${chip(t)} ${esc(REG[t][0])} <small>· <a href="${file(s)}">§${s.id}</a></small></h2>
         <p class="stmt">${link(REG[t][1])}</p><h2>Premises</h2>${boxes(cites(t))}
